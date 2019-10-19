@@ -23,9 +23,8 @@ class VpnAccountGet():
         self.load_account_list()
 
     def load_account_list(self):
-        with open('vpn_account.json') as file_read:
+        with open('./VPN/vpn_account.json') as file_read:
             self.account_list = json.load(file_read)
-        print(self.account_list)
 
     def vpn_account_or_useing(self, username, password):
         '''
@@ -84,7 +83,7 @@ class VpnAccountGet():
         print(a.text)
 
     def get_can_use_account(self):
-        for username, password in self.account_list:
+        for username, password in self.account_list.items():
             stats = self.vpn_account_or_useing(username, password)
             if not stats:
                 return username, password
@@ -92,7 +91,10 @@ class VpnAccountGet():
         # 如果都处于使用状态，随机抽取一个账户强制登出
         i = 1
         ran = random(i, number + 1)
-        for username, password in self.account_list:
+        for username, password in self.account_list.items():
             if i == ran:
                 self.force_logout(username, password)
         return username, password
+
+
+
