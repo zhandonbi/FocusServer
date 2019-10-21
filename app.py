@@ -30,7 +30,7 @@ def schedule():
     password = request.form['password']
     JL = SMC(username, password)
     JL.login_vpn()
-    return JL.get_schedule()
+    return JL.get_schedule('2019-2020-1')
 
 
 if __name__ == '__main__':

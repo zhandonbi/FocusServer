@@ -2,7 +2,6 @@ import requests
 import json
 import re
 import random
-from bs4 import BeautifulSoup as BS
 
 headers = {
     'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36'
@@ -98,3 +97,5 @@ class VpnAccountGet():
 
 
 
+test = VpnAccountGet()
+test.load_account_list()
