@@ -28,9 +28,10 @@ def login():
 def schedule():
     username = request.form['username']
     password = request.form['password']
+    school_year = request.form['school_year']
     JL = SMC(username, password)
     JL.login_vpn()
-    return JL.get_schedule('2019-2020-1')
+    return JL.get_schedule(school_year)
 
 
 if __name__ == '__main__':
