@@ -99,12 +99,12 @@ class StudentMessageCenter():
             html = response.text
         except Exception as e:
             raise Exception("获取失败")
-        class_list = []
+        class_list = ''
         bs = BeautifulSoup(html, 'lxml')
         table = bs.find('table', attrs={'id': 'kbtable'})
         class_message = table.find_all('div', attrs={'class': 'kbcontent'})
         for item in class_message:
-            class_list.append(item)
+            class_list = str(item) + class_list
         return str(class_list)
 
 

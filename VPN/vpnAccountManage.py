@@ -50,6 +50,7 @@ class VpnAccountGet():
             raise Exception('连接失败:{}'.format(e))
             return True
         TEXT = link.text
+        link.close()
         if TEXT.find('There are already other user sessions in progress') != -1 or TEXT.find('已经有其它用户会话正在进行中') != -1:
             return True
         else:
@@ -79,7 +80,7 @@ class VpnAccountGet():
             'FormDataStr': DSIDFormDataStr
         })
         a = session.post(url=login_out_url, data=vpn_data, cookies=cookies, headers=headers, verify=False)
-        print(a.text)
+        session.close()
 
     def get_can_use_account(self):
         for username, password in self.account_list.items():
@@ -89,13 +90,10 @@ class VpnAccountGet():
         number = len(self.account_list)
         # 如果都处于使用状态，随机抽取一个账户强制登出
         i = 1
-        ran = random(i, number + 1)
+        ran = random.randint(1, number+1)
         for username, password in self.account_list.items():
             if i == ran:
                 self.force_logout(username, password)
         return username, password
 
 
-
-test = VpnAccountGet()
-test.load_account_list()
