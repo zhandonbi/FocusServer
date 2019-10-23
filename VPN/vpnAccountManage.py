@@ -27,7 +27,7 @@ class VpnAccountGet():
         with open('./VPN/vpn_account.json') as file_read:
             self.account_list = json.load(file_read)
 
-    def vpn_account_or_useing(self, username, password):
+    def vpn_account_or_using(self, username, password):
         '''
 
         :param username: 学号
@@ -56,7 +56,7 @@ class VpnAccountGet():
             return True
         else:
             try:
-                a = self.session.post(url=login_out_url, data=vpn_data, cookies=cookies, headers=headers, verify=False)
+                self.session.post(url=login_out_url, data=vpn_data, cookies=cookies, headers=headers, verify=False)
                 self.session.close()
             except Exception as e:
                 raise Exception('账户使用测试还原失败:{}'.format(e))
@@ -72,6 +72,7 @@ class VpnAccountGet():
             'realm': 'LDAP-REALM',
             'btnSubmit': '登录'
         }
+        self.session.close()
         response = self.session.post(url=url, data=vpn_data, cookies=cookies, headers=headers, verify=False)
         DSIDFormDataStr = \
             re.findall(r'<input id="DSIDFormDataStr" type="hidden" name="FormDataStr" value="(.*?)">',
