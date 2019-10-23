@@ -3,6 +3,7 @@ from flask import Flask, request, render_template
 from UserLogin.UserOperator import StudentMessageCenter as SMC
 
 app = Flask(__name__)
+app.config['JSON_AS_ASCII'] = False
 
 
 @app.route('/')
@@ -24,14 +25,18 @@ def login():
         'login_message': login_message}
 
 
-@app.route('/get_schedule/', methods=['GET', 'POST'])
+@app.route('/get_schedule/', methods=['POST'])
 def schedule():
     username = request.form['username']
     password = request.form['password']
-    school_year = request.form['school_year']
+    # school_year = request.form['school_year']
     JL = SMC(username, password)
     JL.login_vpn()
-    return JL.get_schedule(school_year)
+    body, extra = JL.get_schedule('2019-2020-1')
+    return {
+        'schedule_body': body,
+        "schedule_extra": extra
+    }
 
 
 if __name__ == '__main__':
