@@ -20,6 +20,8 @@ class VpnAccountGet():
     def __init__(self):
         self.account_list = {}
         self.load_account_list()
+        self.session = requests.session()
+        self.session.keep_alive = False
 
     def load_account_list(self):
         with open('./VPN/vpn_account.json') as file_read:
@@ -42,21 +44,19 @@ class VpnAccountGet():
             'realm': 'LDAP-REALM',
             'btnSubmit': '登录'
         }
-        session = requests.session()
-        session.keep_alive = False
         try:
             requests.packages.urllib3.disable_warnings()
-            link = session.post(url=url, data=vpn_data, cookies=cookies, headers=headers, verify=False)
+            link = self.session.post(url=url, data=vpn_data, cookies=cookies, headers=headers, verify=False)
         except Exception as e:
             raise Exception('连接失败:{}'.format(e))
             return True
         TEXT = link.text
-        link.close()
         if TEXT.find('There are already other user sessions in progress') != -1 or TEXT.find('已经有其它用户会话正在进行中') != -1:
             return True
         else:
             try:
-                a = session.post(url=login_out_url, data=vpn_data, cookies=cookies, headers=headers, verify=False)
+                a = self.session.post(url=login_out_url, data=vpn_data, cookies=cookies, headers=headers, verify=False)
+                self.session.close()
             except Exception as e:
                 raise Exception('账户使用测试还原失败:{}'.format(e))
             return False
@@ -71,17 +71,16 @@ class VpnAccountGet():
             'realm': 'LDAP-REALM',
             'btnSubmit': '登录'
         }
-        session = requests.session()
-        response = session.post(url=url, data=vpn_data, cookies=cookies, headers=headers, verify=False)
+        response = self.session.post(url=url, data=vpn_data, cookies=cookies, headers=headers, verify=False)
         DSIDFormDataStr = \
             re.findall(r'<input id="DSIDFormDataStr" type="hidden" name="FormDataStr" value="(.*?)">',
                        response.text)[0]
-        session.post(url=url, data={
+        self.session.post(url=url, data={
             'btnContinue': '继续会话',
             'FormDataStr': DSIDFormDataStr
         })
-        a = session.post(url=login_out_url, data=vpn_data, cookies=cookies, headers=headers, verify=False)
-        session.close()
+        self.session.post(url=login_out_url, data=vpn_data, cookies=cookies, headers=headers, verify=False)
+        self.session.close()
 
     def get_can_use_account(self):
         for username, password in self.account_list.items():
