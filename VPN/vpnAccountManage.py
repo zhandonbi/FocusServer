@@ -86,7 +86,7 @@ class VpnAccountGet():
 
     def get_can_use_account(self):
         for username, password in self.account_list.items():
-            stats = self.vpn_account_or_useing(username, password)
+            stats = self.vpn_account_or_using(username, password)
             if not stats:
                 return username, password
         number = len(self.account_list)
