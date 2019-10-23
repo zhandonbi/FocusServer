@@ -103,14 +103,9 @@ class StudentMessageCenter():
         bs = BeautifulSoup(html, 'lxml')
         table = bs.find('table', attrs={'id': 'kbtable'})
         class_message = table.find_all('div', attrs={'class': 'kbcontent'})
-        class_tip = table.find('td', attrs={'align': 'left', 'colspan': '7'})
+        class_tip = table.find('td', attrs={'align': 'left', 'colspan': '7'}).text
         for item in class_message:
             class_list = class_list + str(item)
         return class_list, str(class_tip)
 
 
-'''
-test = StudentMessageCenter('182210711235', 'a14568450')
-test.login_vpn()
-print(test.get_schedule('2019-2020-1'))
-'''
