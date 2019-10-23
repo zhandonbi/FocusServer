@@ -44,6 +44,7 @@ class VpnAccountGet():
             'realm': 'LDAP-REALM',
             'btnSubmit': '登录'
         }
+        self.session.close()
         try:
             requests.packages.urllib3.disable_warnings()
             link = self.session.post(url=url, data=vpn_data, cookies=cookies, headers=headers, verify=False)
