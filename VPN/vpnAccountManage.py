@@ -43,6 +43,7 @@ class VpnAccountGet():
             'btnSubmit': '登录'
         }
         session = requests.session()
+        session.keep_alive = False
         try:
             requests.packages.urllib3.disable_warnings()
             link = session.post(url=url, data=vpn_data, cookies=cookies, headers=headers, verify=False)
@@ -94,6 +95,7 @@ class VpnAccountGet():
         for username, password in self.account_list.items():
             if i == ran:
                 self.force_logout(username, password)
+        print(username)
         return username, password
 
 
