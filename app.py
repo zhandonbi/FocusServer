@@ -79,8 +79,8 @@ def edit_user_message():
     status, message = db_operator.update_user(messages)
     db_operator.close()
     return {
-        'edit_status': status,
-        'edit_message': message
+        'sign_in_status': status,
+        'sign_in_message': message
     }
 
 
