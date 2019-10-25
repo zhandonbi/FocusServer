@@ -107,7 +107,7 @@ def edit_class_status():
     time = request.form['time']
     db_operator = FUD()
     status = db_operator.update_class(study_number, subjects, time)
-    return status
+    return {'status': status}
 
 
 if __name__ == '__main__':
