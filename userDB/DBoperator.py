@@ -24,18 +24,19 @@ class FocusUserDB():
         self.DB_user = group['user']
         self.DB_password = group['password']
         self.DB = group['db']
+
     # 关闭连接
     def close(self):
         self.DB_operator.close()
 
     # 添加用户
     def add_user(self, user_messages):
-        ID = '"' + user_messages['studynumber'] + '",'
+        id = '"' + user_messages['studynumber'] + '",'
         nick = '"' + user_messages['nickname'] + '",'
         name = '"' + user_messages['name'] + '",'
         sex = '"' + user_messages['sex'] + '",'
         major = '"' + user_messages['major'] + '"'
-        values = ID + nick + name + sex + major
+        values = id + nick + name + sex + major
         sql = "insert into user_message(studynumber, nickname, name, sex, major) values(" + values + ")"
         status, message = self.search_user(user_messages['studynumber'])
         if status:
@@ -50,7 +51,7 @@ class FocusUserDB():
         self.cur.execute(sql)
         results = self.cur.fetchall()
         if len(results) == 0:
-            return False, 'Null'
+            return False, '此ID不存在'
         return True, \
                {"studynumber": results[0][0],
                 "nickname": results[0][1],
@@ -58,15 +59,25 @@ class FocusUserDB():
                 "sex": results[0][3],
                 "major": results[0][4]}
 
-'''
-test_p = {
-    "studynumber": '182210711206',
-    "nickname": 'xhy',
-    "name": '徐海艺',
-    "sex": '女',
-    "major": '计算机科学与技术'}
+    # 修改用户信息
+    def update_user(self, user_messages):
+        id = 'studynumber="' + user_messages['studynumber'] + '"'
+        nick = 'nickname="' + user_messages['nickname'] + '",'
+        name = 'name="' + user_messages['name'] + '",'
+        sex = 'sex="' + user_messages['sex'] + '",'
+        major = 'major="' + user_messages['major'] + '"'
+        values = nick + name + sex + major
+        sql = "update user_message set "+values+" where "+id
+        search_status, search_messages = self.search_user(user_messages['studynumber'])
+        if search_status:
+            try:
+                self.cur.execute(sql)
+                self.DB_operator.commit()
+            except Exception as e:
+                raise Exception("修改用户数据异常：{}".format(e))
+        else:
+            return False, search_messages
+        return True, "修改成功"
 
-test = FocusUserDB()
-print(test.add_user(test_p))
-test.close()
-'''
+
+
