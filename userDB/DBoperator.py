@@ -67,7 +67,7 @@ class FocusUserDB():
         sex = 'sex="' + user_messages['sex'] + '",'
         major = 'major="' + user_messages['major'] + '"'
         values = nick + name + sex + major
-        sql = "update user_message set "+values+" where "+id
+        sql = "update user_message set " + values + " where " + id
         search_status, search_messages = self.search_user(user_messages['study_number'])
         if search_status:
             try:
@@ -79,5 +79,24 @@ class FocusUserDB():
             return False, search_messages
         return True, "修改成功"
 
+    # 读取课程时间相关信息
+    def read_class(self, user_id):
+        sql = 'select subjects,time from user_message where study_number=' + user_id
+        self.cur.execute(sql)
+        results = self.cur.fetchall()
+        return True, \
+               {
+                   "subjects": results[0][0],
+                   "time": results[0][1]
+               }
 
-
+    # 修改课程时间相关
+    def update_class(self, user_id, class_name, class_time):
+        values = 'subjects="' + class_name + '",time="' + class_time + '"'
+        sql = 'update user_message set ' + values + ' where study_number="' + user_id + '"'
+        try:
+            self.cur.execute(sql)
+            self.DB_operator.commit()
+        except Exception as e:
+            raise Exception("写入课程相关信息异常：{}".format(e))
+        return True

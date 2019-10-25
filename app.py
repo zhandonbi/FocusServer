@@ -6,6 +6,7 @@ from userDB.DBoperator import FocusUserDB as FUD
 app = Flask(__name__)
 app.config['JSON_AS_ASCII'] = False
 
+
 # 用户登录
 @app.route('/login/', methods=['GET', 'POST'])
 def login():
@@ -19,6 +20,7 @@ def login():
         'login_status': login_or_success,
         'username': JL.find_userInfo(),
         'login_message': login_message}
+
 
 # 获取课表
 @app.route('/get_schedule/', methods=['POST'])
@@ -34,6 +36,7 @@ def schedule():
         "schedule_extra": extra
     }
 
+
 # 获取已注册用户信息
 @app.route('/get_user_message/', methods=['POST'])
 def search_user():
@@ -45,6 +48,7 @@ def search_user():
         'search_status': status,
         'search_message': message
     }
+
 
 # 新用户注册
 @app.route('/sign_in/', methods=['POST'])
@@ -65,6 +69,7 @@ def sign_in():
         'sign_in_message': add_message
     }
 
+
 # 编辑已注册用户信息
 @app.route('/edit_user_message/', methods=['POST'])
 def edit_user_message():
@@ -82,6 +87,27 @@ def edit_user_message():
         'sign_in_status': status,
         'sign_in_message': message
     }
+
+
+@app.route('/get_class_status/', methods=['POST'])
+def get_class_status():
+    db_operator = FUD()
+    status, messages = db_operator.read_class(request.form['study_number'])
+    return {
+        'status': status,
+        'subjects': messages['subjects'],
+        'time': messages['time']
+    }
+
+
+@app.route('/edit_class_status/', methods=['POST'])
+def edit_class_status():
+    study_number = request.form['study_number']
+    subjects = request.form['subjects']
+    time = request.form['time']
+    db_operator = FUD()
+    status = db_operator.update_class(study_number, subjects, time)
+    return status
 
 
 if __name__ == '__main__':
