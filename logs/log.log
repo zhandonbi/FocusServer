@@ -4145,3 +4145,759 @@ spawned uWSGI worker 2 (pid: 3805, cores: 100)
 spawned uWSGI worker 3 (pid: 3806, cores: 100)
 spawned uWSGI worker 4 (pid: 3807, cores: 100)
 *** Stats server enabled on /usr/local/webserver/FSS/uwsgi/uwsgi.status fd: 15 ***
+[pid: 3804|app: 0|req: 1/1] 58.246.221.61 () {36 vars in 532 bytes} [Thu Oct 24 15:58:14 2019] GET /get_schedule => generated 178 bytes in 2 msecs (HTTP/1.1 405) 3 headers in 103 bytes (1 switches on core 0)
+[pid: 3807|app: 0|req: 1/2] 58.246.221.163 () {36 vars in 517 bytes} [Thu Oct 24 15:58:14 2019] GET /get_ => generated 232 bytes in 2 msecs (HTTP/1.1 404) 2 headers in 72 bytes (1 switches on core 0)
+[pid: 3804|app: 0|req: 2/3] 96.30.72.14 () {32 vars in 469 bytes} [Thu Oct 24 16:20:51 2019] GET / => generated 341 bytes in 7 msecs (HTTP/1.1 200) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 3804|app: 0|req: 3/4] 203.150.155.11 () {32 vars in 465 bytes} [Thu Oct 24 16:32:10 2019] GET / => generated 341 bytes in 0 msecs (HTTP/1.1 200) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 3804|app: 0|req: 4/5] 178.62.209.176 () {32 vars in 514 bytes} [Thu Oct 24 16:33:07 2019] GET /admin-scripts.asp => generated 232 bytes in 0 msecs (HTTP/1.1 404) 2 headers in 72 bytes (1 switches on core 0)
+[pid: 3807|app: 0|req: 2/6] 178.62.209.176 () {32 vars in 514 bytes} [Thu Oct 24 16:33:07 2019] GET /admin-scripts.asp => generated 232 bytes in 0 msecs (HTTP/1.1 404) 2 headers in 72 bytes (1 switches on core 0)
+[pid: 3804|app: 0|req: 5/7] 114.199.52.199 () {46 vars in 664 bytes} [Thu Oct 24 16:48:20 2019] POST /editBlackAndWhiteList => generated 232 bytes in 0 msecs (HTTP/1.1 404) 2 headers in 72 bytes (1 switches on core 0)
+[pid: 3804|app: 0|req: 6/8] 110.177.77.205 () {44 vars in 740 bytes} [Thu Oct 24 16:48:22 2019] HEAD / => generated 0 bytes in 0 msecs (HTTP/1.1 200) 2 headers in 80 bytes (0 switches on core 0)
+[pid: 3804|app: 0|req: 7/9] 171.34.177.134 () {44 vars in 739 bytes} [Thu Oct 24 16:48:25 2019] GET / => generated 341 bytes in 0 msecs (HTTP/1.1 200) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 3804|app: 0|req: 8/10] 113.128.105.151 () {44 vars in 735 bytes} [Thu Oct 24 16:48:27 2019] GET / => generated 341 bytes in 0 msecs (HTTP/1.1 200) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 3804|app: 0|req: 9/11] 175.42.1.104 () {44 vars in 732 bytes} [Thu Oct 24 16:48:29 2019] GET / => generated 341 bytes in 0 msecs (HTTP/1.1 200) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 3806|app: 0|req: 1/12] 124.235.138.36 () {44 vars in 744 bytes} [Thu Oct 24 16:48:29 2019] GET / => generated 341 bytes in 9 msecs (HTTP/1.1 200) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 3804|app: 0|req: 10/13] 188.234.196.26 () {32 vars in 464 bytes} [Thu Oct 24 18:55:32 2019] GET / => generated 341 bytes in 0 msecs (HTTP/1.1 200) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 3804|app: 0|req: 11/14] 171.100.56.214 () {32 vars in 472 bytes} [Thu Oct 24 19:03:27 2019] GET / => generated 341 bytes in 0 msecs (HTTP/1.1 200) 2 headers in 80 bytes (1 switches on core 0)
+未登录
+[pid: 3804|app: 0|req: 12/15] 223.104.145.73 () {38 vars in 541 bytes} [Thu Oct 24 19:14:43 2019] POST /get_schedule/ => generated 7570 bytes in 919 msecs (HTTP/1.1 200) 2 headers in 73 bytes (1 switches on core 0)
+未登录
+[pid: 3804|app: 0|req: 13/16] 223.104.145.73 () {38 vars in 541 bytes} [Thu Oct 24 19:16:02 2019] POST /get_schedule/ => generated 7570 bytes in 1137 msecs (HTTP/1.1 200) 2 headers in 73 bytes (1 switches on core 15)
+未登录
+[pid: 3804|app: 0|req: 14/17] 223.104.145.73 () {38 vars in 541 bytes} [Thu Oct 24 19:17:45 2019] POST /get_schedule/ => generated 7570 bytes in 1184 msecs (HTTP/1.1 200) 2 headers in 73 bytes (1 switches on core 16)
+[2019-10-24 19:22:14,704] ERROR in app: Exception on /get_schedule/ [POST]
+Traceback (most recent call last):
+  File "/usr/local/python3/lib/python3.6/site-packages/urllib3/connection.py", line 157, in _new_conn
+    (self._dns_host, self.port), self.timeout, **extra_kw
+  File "/usr/local/python3/lib/python3.6/site-packages/urllib3/util/connection.py", line 84, in create_connection
+    raise err
+  File "/usr/local/python3/lib/python3.6/site-packages/urllib3/util/connection.py", line 74, in create_connection
+    sock.connect(sa)
+TimeoutError: [Errno 110] Connection timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/python3/lib/python3.6/site-packages/urllib3/connectionpool.py", line 672, in urlopen
+    chunked=chunked,
+  File "/usr/local/python3/lib/python3.6/site-packages/urllib3/connectionpool.py", line 376, in _make_request
+    self._validate_conn(conn)
+  File "/usr/local/python3/lib/python3.6/site-packages/urllib3/connectionpool.py", line 994, in _validate_conn
+    conn.connect()
+  File "/usr/local/python3/lib/python3.6/site-packages/urllib3/connection.py", line 334, in connect
+    conn = self._new_conn()
+  File "/usr/local/python3/lib/python3.6/site-packages/urllib3/connection.py", line 169, in _new_conn
+    self, "Failed to establish a new connection: %s" % e
+urllib3.exceptions.NewConnectionError: <urllib3.connection.VerifiedHTTPSConnection object at 0x7fb2af957f28>: Failed to establish a new connection: [Errno 110] Connection timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/python3/lib/python3.6/site-packages/requests/adapters.py", line 449, in send
+    timeout=timeout
+  File "/usr/local/python3/lib/python3.6/site-packages/urllib3/connectionpool.py", line 720, in urlopen
+    method, url, error=e, _pool=self, _stacktrace=sys.exc_info()[2]
+  File "/usr/local/python3/lib/python3.6/site-packages/urllib3/util/retry.py", line 436, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='vpn.just.edu.cn', port=443): Max retries exceeded with url: /dana-na/auth/url_default/login.cgi (Caused by NewConnectionError('<urllib3.connection.VerifiedHTTPSConnection object at 0x7fb2af957f28>: Failed to establish a new connection: [Errno 110] Connection timed out',))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "./VPN/vpnAccountManage.py", line 50, in vpn_account_or_using
+    link = self.session.post(url=url, data=vpn_data, cookies=cookies, headers=headers, verify=False)
+  File "/usr/local/python3/lib/python3.6/site-packages/requests/sessions.py", line 581, in post
+    return self.request('POST', url, data=data, json=json, **kwargs)
+  File "/usr/local/python3/lib/python3.6/site-packages/requests/sessions.py", line 533, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/usr/local/python3/lib/python3.6/site-packages/requests/sessions.py", line 646, in send
+    r = adapter.send(request, **kwargs)
+  File "/usr/local/python3/lib/python3.6/site-packages/requests/adapters.py", line 516, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='vpn.just.edu.cn', port=443): Max retries exceeded with url: /dana-na/auth/url_default/login.cgi (Caused by NewConnectionError('<urllib3.connection.VerifiedHTTPSConnection object at 0x7fb2af957f28>: Failed to establish a new connection: [Errno 110] Connection timed out',))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/python3/lib/python3.6/site-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/python3/lib/python3.6/site-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/python3/lib/python3.6/site-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/python3/lib/python3.6/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/local/python3/lib/python3.6/site-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/python3/lib/python3.6/site-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/usr/local/webserver/FSS/app.py", line 34, in schedule
+    JL.login_vpn()
+  File "./UserLogin/UserOperator.py", line 38, in login_vpn
+    v_username, v_password = VA.get_can_use_account()
+  File "./VPN/vpnAccountManage.py", line 89, in get_can_use_account
+    stats = self.vpn_account_or_using(username, password)
+  File "./VPN/vpnAccountManage.py", line 52, in vpn_account_or_using
+    raise Exception('连接失败:{}'.format(e))
+Exception: 连接失败:HTTPSConnectionPool(host='vpn.just.edu.cn', port=443): Max retries exceeded with url: /dana-na/auth/url_default/login.cgi (Caused by NewConnectionError('<urllib3.connection.VerifiedHTTPSConnection object at 0x7fb2af957f28>: Failed to establish a new connection: [Errno 110] Connection timed out',))
+[pid: 3804|app: 0|req: 16/18] 223.104.145.73 () {38 vars in 541 bytes} [Thu Oct 24 19:20:07 2019] POST /get_schedule/ => generated 290 bytes in 127556 msecs (HTTP/1.1 500) 2 headers in 84 bytes (1 switches on core 17)
+[2019-10-24 19:23:37,263] ERROR in app: Exception on /get_schedule/ [POST]
+Traceback (most recent call last):
+  File "/usr/local/python3/lib/python3.6/site-packages/urllib3/connection.py", line 157, in _new_conn
+    (self._dns_host, self.port), self.timeout, **extra_kw
+  File "/usr/local/python3/lib/python3.6/site-packages/urllib3/util/connection.py", line 84, in create_connection
+    raise err
+  File "/usr/local/python3/lib/python3.6/site-packages/urllib3/util/connection.py", line 74, in create_connection
+    sock.connect(sa)
+TimeoutError: [Errno 110] Connection timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/python3/lib/python3.6/site-packages/urllib3/connectionpool.py", line 672, in urlopen
+    chunked=chunked,
+  File "/usr/local/python3/lib/python3.6/site-packages/urllib3/connectionpool.py", line 376, in _make_request
+    self._validate_conn(conn)
+  File "/usr/local/python3/lib/python3.6/site-packages/urllib3/connectionpool.py", line 994, in _validate_conn
+    conn.connect()
+  File "/usr/local/python3/lib/python3.6/site-packages/urllib3/connection.py", line 334, in connect
+    conn = self._new_conn()
+  File "/usr/local/python3/lib/python3.6/site-packages/urllib3/connection.py", line 169, in _new_conn
+    self, "Failed to establish a new connection: %s" % e
+urllib3.exceptions.NewConnectionError: <urllib3.connection.VerifiedHTTPSConnection object at 0x7fb2afad3278>: Failed to establish a new connection: [Errno 110] Connection timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/python3/lib/python3.6/site-packages/requests/adapters.py", line 449, in send
+    timeout=timeout
+  File "/usr/local/python3/lib/python3.6/site-packages/urllib3/connectionpool.py", line 720, in urlopen
+    method, url, error=e, _pool=self, _stacktrace=sys.exc_info()[2]
+  File "/usr/local/python3/lib/python3.6/site-packages/urllib3/util/retry.py", line 436, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='vpn.just.edu.cn', port=443): Max retries exceeded with url: /dana-na/auth/url_default/login.cgi (Caused by NewConnectionError('<urllib3.connection.VerifiedHTTPSConnection object at 0x7fb2afad3278>: Failed to establish a new connection: [Errno 110] Connection timed out',))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "./VPN/vpnAccountManage.py", line 50, in vpn_account_or_using
+    link = self.session.post(url=url, data=vpn_data, cookies=cookies, headers=headers, verify=False)
+  File "/usr/local/python3/lib/python3.6/site-packages/requests/sessions.py", line 581, in post
+    return self.request('POST', url, data=data, json=json, **kwargs)
+  File "/usr/local/python3/lib/python3.6/site-packages/requests/sessions.py", line 533, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/usr/local/python3/lib/python3.6/site-packages/requests/sessions.py", line 646, in send
+    r = adapter.send(request, **kwargs)
+  File "/usr/local/python3/lib/python3.6/site-packages/requests/adapters.py", line 516, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='vpn.just.edu.cn', port=443): Max retries exceeded with url: /dana-na/auth/url_default/login.cgi (Caused by NewConnectionError('<urllib3.connection.VerifiedHTTPSConnection object at 0x7fb2afad3278>: Failed to establish a new connection: [Errno 110] Connection timed out',))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/python3/lib/python3.6/site-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/python3/lib/python3.6/site-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/python3/lib/python3.6/site-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/python3/lib/python3.6/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/local/python3/lib/python3.6/site-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/python3/lib/python3.6/site-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/usr/local/webserver/FSS/app.py", line 34, in schedule
+    JL.login_vpn()
+  File "./UserLogin/UserOperator.py", line 38, in login_vpn
+    v_username, v_password = VA.get_can_use_account()
+  File "./VPN/vpnAccountManage.py", line 89, in get_can_use_account
+    stats = self.vpn_account_or_using(username, password)
+  File "./VPN/vpnAccountManage.py", line 52, in vpn_account_or_using
+    raise Exception('连接失败:{}'.format(e))
+Exception: 连接失败:HTTPSConnectionPool(host='vpn.just.edu.cn', port=443): Max retries exceeded with url: /dana-na/auth/url_default/login.cgi (Caused by NewConnectionError('<urllib3.connection.VerifiedHTTPSConnection object at 0x7fb2afad3278>: Failed to establish a new connection: [Errno 110] Connection timed out',))
+[pid: 3804|app: 0|req: 17/19] 223.104.145.73 () {38 vars in 541 bytes} [Thu Oct 24 19:21:29 2019] POST /get_schedule/ => generated 290 bytes in 127343 msecs (HTTP/1.1 500) 2 headers in 84 bytes (1 switches on core 18)
+[2019-10-24 19:24:25,903] ERROR in app: Exception on /get_schedule/ [POST]
+Traceback (most recent call last):
+  File "/usr/local/python3/lib/python3.6/site-packages/urllib3/connection.py", line 157, in _new_conn
+    (self._dns_host, self.port), self.timeout, **extra_kw
+  File "/usr/local/python3/lib/python3.6/site-packages/urllib3/util/connection.py", line 84, in create_connection
+    raise err
+  File "/usr/local/python3/lib/python3.6/site-packages/urllib3/util/connection.py", line 74, in create_connection
+    sock.connect(sa)
+TimeoutError: [Errno 110] Connection timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/python3/lib/python3.6/site-packages/urllib3/connectionpool.py", line 672, in urlopen
+    chunked=chunked,
+  File "/usr/local/python3/lib/python3.6/site-packages/urllib3/connectionpool.py", line 376, in _make_request
+    self._validate_conn(conn)
+  File "/usr/local/python3/lib/python3.6/site-packages/urllib3/connectionpool.py", line 994, in _validate_conn
+    conn.connect()
+  File "/usr/local/python3/lib/python3.6/site-packages/urllib3/connection.py", line 334, in connect
+    conn = self._new_conn()
+  File "/usr/local/python3/lib/python3.6/site-packages/urllib3/connection.py", line 169, in _new_conn
+    self, "Failed to establish a new connection: %s" % e
+urllib3.exceptions.NewConnectionError: <urllib3.connection.VerifiedHTTPSConnection object at 0x7fb2af8f43c8>: Failed to establish a new connection: [Errno 110] Connection timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/python3/lib/python3.6/site-packages/requests/adapters.py", line 449, in send
+    timeout=timeout
+  File "/usr/local/python3/lib/python3.6/site-packages/urllib3/connectionpool.py", line 720, in urlopen
+    method, url, error=e, _pool=self, _stacktrace=sys.exc_info()[2]
+  File "/usr/local/python3/lib/python3.6/site-packages/urllib3/util/retry.py", line 436, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='vpn.just.edu.cn', port=443): Max retries exceeded with url: /dana-na/auth/url_default/login.cgi (Caused by NewConnectionError('<urllib3.connection.VerifiedHTTPSConnection object at 0x7fb2af8f43c8>: Failed to establish a new connection: [Errno 110] Connection timed out',))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "./VPN/vpnAccountManage.py", line 50, in vpn_account_or_using
+    link = self.session.post(url=url, data=vpn_data, cookies=cookies, headers=headers, verify=False)
+  File "/usr/local/python3/lib/python3.6/site-packages/requests/sessions.py", line 581, in post
+    return self.request('POST', url, data=data, json=json, **kwargs)
+  File "/usr/local/python3/lib/python3.6/site-packages/requests/sessions.py", line 533, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/usr/local/python3/lib/python3.6/site-packages/requests/sessions.py", line 646, in send
+    r = adapter.send(request, **kwargs)
+  File "/usr/local/python3/lib/python3.6/site-packages/requests/adapters.py", line 516, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='vpn.just.edu.cn', port=443): Max retries exceeded with url: /dana-na/auth/url_default/login.cgi (Caused by NewConnectionError('<urllib3.connection.VerifiedHTTPSConnection object at 0x7fb2af8f43c8>: Failed to establish a new connection: [Errno 110] Connection timed out',))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/python3/lib/python3.6/site-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/python3/lib/python3.6/site-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/python3/lib/python3.6/site-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/python3/lib/python3.6/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/local/python3/lib/python3.6/site-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/python3/lib/python3.6/site-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/usr/local/webserver/FSS/app.py", line 34, in schedule
+    JL.login_vpn()
+  File "./UserLogin/UserOperator.py", line 38, in login_vpn
+    v_username, v_password = VA.get_can_use_account()
+  File "./VPN/vpnAccountManage.py", line 89, in get_can_use_account
+    stats = self.vpn_account_or_using(username, password)
+  File "./VPN/vpnAccountManage.py", line 52, in vpn_account_or_using
+    raise Exception('连接失败:{}'.format(e))
+Exception: 连接失败:HTTPSConnectionPool(host='vpn.just.edu.cn', port=443): Max retries exceeded with url: /dana-na/auth/url_default/login.cgi (Caused by NewConnectionError('<urllib3.connection.VerifiedHTTPSConnection object at 0x7fb2af8f43c8>: Failed to establish a new connection: [Errno 110] Connection timed out',))
+[pid: 3804|app: 0|req: 17/20] 223.104.145.73 () {38 vars in 541 bytes} [Thu Oct 24 19:22:18 2019] POST /get_schedule/ => generated 290 bytes in 127336 msecs (HTTP/1.1 500) 2 headers in 84 bytes (1 switches on core 19)
+[pid: 3804|app: 0|req: 18/21] 117.136.67.246 () {40 vars in 899 bytes} [Thu Oct 24 20:10:20 2019] GET / => generated 341 bytes in 0 msecs (HTTP/1.1 200) 2 headers in 80 bytes (1 switches on core 20)
+[pid: 3805|app: 0|req: 1/22] 117.136.67.246 () {40 vars in 872 bytes} [Thu Oct 24 20:10:20 2019] GET /favicon.ico => generated 232 bytes in 2 msecs (HTTP/1.1 404) 2 headers in 72 bytes (1 switches on core 0)
+[pid: 3804|app: 0|req: 19/23] 80.82.70.187 () {32 vars in 431 bytes} [Fri Oct 25 00:58:21 2019] GET /cache/global/img/gs.gif => generated 232 bytes in 0 msecs (HTTP/1.1 404) 2 headers in 72 bytes (1 switches on core 20)
+[pid: 3804|app: 0|req: 20/24] 49.235.155.223 () {42 vars in 667 bytes} [Fri Oct 25 03:41:38 2019] POST /invoker/readonly => generated 232 bytes in 0 msecs (HTTP/1.1 404) 2 headers in 72 bytes (1 switches on core 20)
+[pid: 3804|app: 0|req: 21/25] 173.212.248.207 () {34 vars in 437 bytes} [Fri Oct 25 03:49:58 2019] GET /001565000000.cfg => generated 232 bytes in 0 msecs (HTTP/1.1 404) 2 headers in 72 bytes (1 switches on core 20)
+[pid: 3804|app: 0|req: 22/26] 101.89.19.140 () {36 vars in 518 bytes} [Fri Oct 25 04:30:26 2019] GET /get_schedule/ => generated 178 bytes in 0 msecs (HTTP/1.1 405) 3 headers in 103 bytes (1 switches on core 20)
+[pid: 3804|app: 0|req: 23/27] 139.162.79.87 () {34 vars in 393 bytes} [Fri Oct 25 04:40:10 2019] GET / => generated 341 bytes in 0 msecs (HTTP/1.1 200) 2 headers in 80 bytes (1 switches on core 20)
+[pid: 3804|app: 0|req: 24/28] 27.201.181.117 () {32 vars in 465 bytes} [Fri Oct 25 05:32:16 2019] GET / => generated 341 bytes in 0 msecs (HTTP/1.1 200) 2 headers in 80 bytes (1 switches on core 20)
+[pid: 3804|app: 0|req: 25/29] 95.46.137.57 () {32 vars in 469 bytes} [Fri Oct 25 07:16:16 2019] GET / => generated 341 bytes in 0 msecs (HTTP/1.1 200) 2 headers in 80 bytes (1 switches on core 20)
+[pid: 3804|app: 0|req: 26/30] 173.212.248.207 () {34 vars in 432 bytes} [Fri Oct 25 08:05:39 2019] GET /001565000000.cfg => generated 232 bytes in 0 msecs (HTTP/1.0 404) 2 headers in 72 bytes (1 switches on core 20)
+[pid: 3804|app: 0|req: 27/31] 49.235.14.65 () {42 vars in 812 bytes} [Fri Oct 25 09:03:23 2019] GET / => generated 341 bytes in 0 msecs (HTTP/1.1 200) 2 headers in 80 bytes (1 switches on core 20)
+[pid: 3806|app: 0|req: 2/32] 49.235.14.65 () {42 vars in 840 bytes} [Fri Oct 25 09:03:23 2019] GET /index.php => generated 232 bytes in 0 msecs (HTTP/1.1 404) 2 headers in 72 bytes (1 switches on core 0)
+[pid: 3804|app: 0|req: 28/33] 161.132.203.173 () {32 vars in 467 bytes} [Fri Oct 25 09:04:26 2019] GET / => generated 341 bytes in 0 msecs (HTTP/1.1 200) 2 headers in 80 bytes (1 switches on core 20)
+[pid: 3804|app: 0|req: 29/34] 200.53.28.211 () {32 vars in 471 bytes} [Fri Oct 25 10:02:03 2019] GET / => generated 341 bytes in 0 msecs (HTTP/1.1 200) 2 headers in 80 bytes (1 switches on core 20)
+[pid: 3804|app: 0|req: 30/35] 183.192.179.16 () {36 vars in 511 bytes} [Fri Oct 25 10:11:27 2019] GET /index.php => generated 232 bytes in 0 msecs (HTTP/1.1 404) 2 headers in 72 bytes (1 switches on core 20)
+[pid: 3804|app: 0|req: 31/36] 80.82.70.187 () {32 vars in 431 bytes} [Fri Oct 25 10:57:28 2019] GET /cache/global/img/gs.gif => generated 232 bytes in 1 msecs (HTTP/1.1 404) 2 headers in 72 bytes (1 switches on core 20)
+[pid: 3804|app: 0|req: 32/37] 223.68.90.78 () {38 vars in 527 bytes} [Fri Oct 25 11:09:18 2019] POST /login/ => generated 192 bytes in 1 msecs (HTTP/1.1 400) 2 headers in 74 bytes (1 switches on core 20)
+[pid: 3804|app: 0|req: 33/38] 101.89.19.140 () {36 vars in 552 bytes} [Fri Oct 25 11:13:00 2019] GET /thinkphp/html/public/index.php => generated 232 bytes in 0 msecs (HTTP/1.1 404) 2 headers in 72 bytes (1 switches on core 20)
+[pid: 3805|app: 0|req: 2/39] 59.57.149.246 () {40 vars in 617 bytes} [Fri Oct 25 11:13:00 2019] GET /thinkphp/html/public/index.php => generated 232 bytes in 0 msecs (HTTP/1.1 404) 2 headers in 72 bytes (1 switches on core 0)
+[pid: 3804|app: 0|req: 34/40] 37.182.63.144 () {46 vars in 663 bytes} [Fri Oct 25 11:13:43 2019] POST /editBlackAndWhiteList => generated 232 bytes in 0 msecs (HTTP/1.1 404) 2 headers in 72 bytes (1 switches on core 20)
+[pid: 3804|app: 0|req: 35/41] 101.89.19.140 () {36 vars in 516 bytes} [Fri Oct 25 11:54:27 2019] GET /TP/index.php => generated 232 bytes in 0 msecs (HTTP/1.1 404) 2 headers in 72 bytes (1 switches on core 20)
+[pid: 3805|app: 0|req: 3/42] 61.241.50.63 () {36 vars in 515 bytes} [Fri Oct 25 11:54:27 2019] GET /TP/index.php => generated 232 bytes in 0 msecs (HTTP/1.1 404) 2 headers in 72 bytes (1 switches on core 0)
+[pid: 3806|app: 0|req: 3/43] 106.122.168.125 () {40 vars in 583 bytes} [Fri Oct 25 11:54:27 2019] GET /TP/index.php => generated 232 bytes in 0 msecs (HTTP/1.1 404) 2 headers in 72 bytes (1 switches on core 0)
+Fri Oct 25 12:28:06 2019 - *** /usr/local/webserver/FSS/ has been touched... grace them all !!! ***
+...gracefully killing workers...
+Gracefully killing worker 1 (pid: 3804)...
+Gracefully killing worker 2 (pid: 3805)...
+Gracefully killing worker 3 (pid: 3806)...
+Gracefully killing worker 4 (pid: 3807)...
+worker 1 buried after 1 seconds
+worker 2 buried after 1 seconds
+worker 3 buried after 1 seconds
+worker 4 buried after 1 seconds
+binary reloading uWSGI...
+chdir() to /usr/local/webserver/FSS
+closing all non-uwsgi socket fds > 2 (max_fd = 100001)...
+found fd 3 mapped to socket 0 (127.0.0.1:8081)
+running /usr/local/python3/bin/uwsgi
+[uWSGI] getting INI configuration from uwsgi.ini
+*** Starting uWSGI 2.0.18 (64bit) on [Fri Oct 25 12:28:07 2019] ***
+compiled with version: 4.8.5 20150623 (Red Hat 4.8.5-39) on 21 October 2019 12:48:53
+os: Linux-3.10.0-957.21.3.el7.x86_64 #1 SMP Tue Jun 18 16:35:19 UTC 2019
+nodename: VM_0_6_centos
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 1
+current working directory: /usr/local/webserver/FSS
+detected binary path: /usr/local/python3/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /usr/local/webserver/FSS/
+your processes number limit is 7269
+your memory page size is 4096 bytes
+detected max file descriptor number: 100001
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 inherited INET address 127.0.0.1:8081 fd 3
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+Python version: 3.6.1 (default, Oct 19 2019, 16:14:38)  [GCC 4.8.5 20150623 (Red Hat 4.8.5-36)]
+Python main interpreter initialized at 0xc8d100
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 5540320 bytes (5410 KB) for 400 cores
+*** Operational MODE: preforking+threaded ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0xc8d100 pid: 1604 (default app)
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** uWSGI is running in multiple interpreter mode ***
+gracefully (RE)spawned uWSGI master process (pid: 1604)
+spawned uWSGI worker 1 (pid: 10386, cores: 100)
+spawned uWSGI worker 2 (pid: 10387, cores: 100)
+spawned uWSGI worker 3 (pid: 10388, cores: 100)
+spawned uWSGI worker 4 (pid: 10389, cores: 100)
+*** Stats server enabled on /usr/local/webserver/FSS/uwsgi/uwsgi.status fd: 15 ***
+Fri Oct 25 12:28:15 2019 - *** /usr/local/webserver/FSS/ has been touched... grace them all !!! ***
+...gracefully killing workers...
+Gracefully killing worker 1 (pid: 10386)...
+Gracefully killing worker 2 (pid: 10387)...
+Gracefully killing worker 3 (pid: 10388)...
+Gracefully killing worker 4 (pid: 10389)...
+worker 1 buried after 1 seconds
+worker 2 buried after 1 seconds
+worker 3 buried after 1 seconds
+worker 4 buried after 1 seconds
+binary reloading uWSGI...
+chdir() to /usr/local/webserver/FSS
+closing all non-uwsgi socket fds > 2 (max_fd = 100001)...
+found fd 3 mapped to socket 0 (127.0.0.1:8081)
+running /usr/local/python3/bin/uwsgi
+[uWSGI] getting INI configuration from uwsgi.ini
+*** Starting uWSGI 2.0.18 (64bit) on [Fri Oct 25 12:28:16 2019] ***
+compiled with version: 4.8.5 20150623 (Red Hat 4.8.5-39) on 21 October 2019 12:48:53
+os: Linux-3.10.0-957.21.3.el7.x86_64 #1 SMP Tue Jun 18 16:35:19 UTC 2019
+nodename: VM_0_6_centos
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 1
+current working directory: /usr/local/webserver/FSS
+detected binary path: /usr/local/python3/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /usr/local/webserver/FSS/
+your processes number limit is 7269
+your memory page size is 4096 bytes
+detected max file descriptor number: 100001
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 inherited INET address 127.0.0.1:8081 fd 3
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+Python version: 3.6.1 (default, Oct 19 2019, 16:14:38)  [GCC 4.8.5 20150623 (Red Hat 4.8.5-36)]
+Python main interpreter initialized at 0x1036100
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 5540320 bytes (5410 KB) for 400 cores
+*** Operational MODE: preforking+threaded ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x1036100 pid: 1604 (default app)
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** uWSGI is running in multiple interpreter mode ***
+gracefully (RE)spawned uWSGI master process (pid: 1604)
+spawned uWSGI worker 1 (pid: 10808, cores: 100)
+spawned uWSGI worker 2 (pid: 10809, cores: 100)
+spawned uWSGI worker 3 (pid: 10810, cores: 100)
+spawned uWSGI worker 4 (pid: 10811, cores: 100)
+*** Stats server enabled on /usr/local/webserver/FSS/uwsgi/uwsgi.status fd: 15 ***
+Fri Oct 25 12:28:21 2019 - *** /usr/local/webserver/FSS/ has been touched... grace them all !!! ***
+...gracefully killing workers...
+Gracefully killing worker 1 (pid: 10808)...
+Gracefully killing worker 2 (pid: 10809)...
+Gracefully killing worker 3 (pid: 10810)...
+Gracefully killing worker 4 (pid: 10811)...
+worker 1 buried after 1 seconds
+worker 2 buried after 1 seconds
+worker 3 buried after 1 seconds
+worker 4 buried after 1 seconds
+binary reloading uWSGI...
+chdir() to /usr/local/webserver/FSS
+closing all non-uwsgi socket fds > 2 (max_fd = 100001)...
+found fd 3 mapped to socket 0 (127.0.0.1:8081)
+running /usr/local/python3/bin/uwsgi
+[uWSGI] getting INI configuration from uwsgi.ini
+*** Starting uWSGI 2.0.18 (64bit) on [Fri Oct 25 12:28:22 2019] ***
+compiled with version: 4.8.5 20150623 (Red Hat 4.8.5-39) on 21 October 2019 12:48:53
+os: Linux-3.10.0-957.21.3.el7.x86_64 #1 SMP Tue Jun 18 16:35:19 UTC 2019
+nodename: VM_0_6_centos
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 1
+current working directory: /usr/local/webserver/FSS
+detected binary path: /usr/local/python3/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /usr/local/webserver/FSS/
+your processes number limit is 7269
+your memory page size is 4096 bytes
+detected max file descriptor number: 100001
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 inherited INET address 127.0.0.1:8081 fd 3
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+Python version: 3.6.1 (default, Oct 19 2019, 16:14:38)  [GCC 4.8.5 20150623 (Red Hat 4.8.5-36)]
+Python main interpreter initialized at 0x1021100
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 5540320 bytes (5410 KB) for 400 cores
+*** Operational MODE: preforking+threaded ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x1021100 pid: 1604 (default app)
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** uWSGI is running in multiple interpreter mode ***
+gracefully (RE)spawned uWSGI master process (pid: 1604)
+spawned uWSGI worker 1 (pid: 11219, cores: 100)
+spawned uWSGI worker 2 (pid: 11220, cores: 100)
+spawned uWSGI worker 3 (pid: 11221, cores: 100)
+spawned uWSGI worker 4 (pid: 11222, cores: 100)
+*** Stats server enabled on /usr/local/webserver/FSS/uwsgi/uwsgi.status fd: 15 ***
+Fri Oct 25 12:28:35 2019 - *** /usr/local/webserver/FSS/ has been touched... grace them all !!! ***
+...gracefully killing workers...
+Gracefully killing worker 1 (pid: 11219)...
+Gracefully killing worker 2 (pid: 11220)...
+Gracefully killing worker 3 (pid: 11221)...
+Gracefully killing worker 4 (pid: 11222)...
+worker 1 buried after 1 seconds
+worker 2 buried after 1 seconds
+worker 3 buried after 1 seconds
+worker 4 buried after 1 seconds
+binary reloading uWSGI...
+chdir() to /usr/local/webserver/FSS
+closing all non-uwsgi socket fds > 2 (max_fd = 100001)...
+found fd 3 mapped to socket 0 (127.0.0.1:8081)
+running /usr/local/python3/bin/uwsgi
+[uWSGI] getting INI configuration from uwsgi.ini
+*** Starting uWSGI 2.0.18 (64bit) on [Fri Oct 25 12:28:36 2019] ***
+compiled with version: 4.8.5 20150623 (Red Hat 4.8.5-39) on 21 October 2019 12:48:53
+os: Linux-3.10.0-957.21.3.el7.x86_64 #1 SMP Tue Jun 18 16:35:19 UTC 2019
+nodename: VM_0_6_centos
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 1
+current working directory: /usr/local/webserver/FSS
+detected binary path: /usr/local/python3/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /usr/local/webserver/FSS/
+your processes number limit is 7269
+your memory page size is 4096 bytes
+detected max file descriptor number: 100001
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 inherited INET address 127.0.0.1:8081 fd 3
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+Python version: 3.6.1 (default, Oct 19 2019, 16:14:38)  [GCC 4.8.5 20150623 (Red Hat 4.8.5-36)]
+Python main interpreter initialized at 0xcc6100
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 5540320 bytes (5410 KB) for 400 cores
+*** Operational MODE: preforking+threaded ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0xcc6100 pid: 1604 (default app)
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** uWSGI is running in multiple interpreter mode ***
+gracefully (RE)spawned uWSGI master process (pid: 1604)
+spawned uWSGI worker 1 (pid: 11651, cores: 100)
+spawned uWSGI worker 2 (pid: 11652, cores: 100)
+spawned uWSGI worker 3 (pid: 11653, cores: 100)
+spawned uWSGI worker 4 (pid: 11654, cores: 100)
+*** Stats server enabled on /usr/local/webserver/FSS/uwsgi/uwsgi.status fd: 15 ***
+Fri Oct 25 12:28:59 2019 - *** /usr/local/webserver/FSS/ has been touched... grace them all !!! ***
+...gracefully killing workers...
+Gracefully killing worker 1 (pid: 11651)...
+Gracefully killing worker 2 (pid: 11652)...
+Gracefully killing worker 3 (pid: 11653)...
+Gracefully killing worker 4 (pid: 11654)...
+worker 1 buried after 1 seconds
+worker 2 buried after 1 seconds
+worker 3 buried after 1 seconds
+worker 4 buried after 1 seconds
+binary reloading uWSGI...
+chdir() to /usr/local/webserver/FSS
+closing all non-uwsgi socket fds > 2 (max_fd = 100001)...
+found fd 3 mapped to socket 0 (127.0.0.1:8081)
+running /usr/local/python3/bin/uwsgi
+[uWSGI] getting INI configuration from uwsgi.ini
+*** Starting uWSGI 2.0.18 (64bit) on [Fri Oct 25 12:29:00 2019] ***
+compiled with version: 4.8.5 20150623 (Red Hat 4.8.5-39) on 21 October 2019 12:48:53
+os: Linux-3.10.0-957.21.3.el7.x86_64 #1 SMP Tue Jun 18 16:35:19 UTC 2019
+nodename: VM_0_6_centos
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 1
+current working directory: /usr/local/webserver/FSS
+detected binary path: /usr/local/python3/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /usr/local/webserver/FSS/
+your processes number limit is 7269
+your memory page size is 4096 bytes
+detected max file descriptor number: 100001
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 inherited INET address 127.0.0.1:8081 fd 3
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+Python version: 3.6.1 (default, Oct 19 2019, 16:14:38)  [GCC 4.8.5 20150623 (Red Hat 4.8.5-36)]
+Python main interpreter initialized at 0x1a8b100
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 5540320 bytes (5410 KB) for 400 cores
+*** Operational MODE: preforking+threaded ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x1a8b100 pid: 1604 (default app)
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** uWSGI is running in multiple interpreter mode ***
+gracefully (RE)spawned uWSGI master process (pid: 1604)
+spawned uWSGI worker 1 (pid: 12112, cores: 100)
+spawned uWSGI worker 2 (pid: 12113, cores: 100)
+spawned uWSGI worker 3 (pid: 12114, cores: 100)
+spawned uWSGI worker 4 (pid: 12115, cores: 100)
+*** Stats server enabled on /usr/local/webserver/FSS/uwsgi/uwsgi.status fd: 15 ***
+...gracefully killing workers...
+Gracefully killing worker 1 (pid: 12112)...
+Gracefully killing worker 2 (pid: 12113)...
+Gracefully killing worker 3 (pid: 12114)...
+Gracefully killing worker 4 (pid: 12115)...
+worker 1 buried after 1 seconds
+worker 2 buried after 1 seconds
+worker 3 buried after 1 seconds
+worker 4 buried after 1 seconds
+binary reloading uWSGI...
+chdir() to /usr/local/webserver/FSS
+closing all non-uwsgi socket fds > 2 (max_fd = 100001)...
+found fd 3 mapped to socket 0 (127.0.0.1:8081)
+running /usr/local/python3/bin/uwsgi
+[uWSGI] getting INI configuration from uwsgi.ini
+*** Starting uWSGI 2.0.18 (64bit) on [Fri Oct 25 12:29:26 2019] ***
+compiled with version: 4.8.5 20150623 (Red Hat 4.8.5-39) on 21 October 2019 12:48:53
+os: Linux-3.10.0-957.21.3.el7.x86_64 #1 SMP Tue Jun 18 16:35:19 UTC 2019
+nodename: VM_0_6_centos
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 1
+current working directory: /usr/local/webserver/FSS
+detected binary path: /usr/local/python3/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /usr/local/webserver/FSS/
+your processes number limit is 7269
+your memory page size is 4096 bytes
+detected max file descriptor number: 100001
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 inherited INET address 127.0.0.1:8081 fd 3
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+Python version: 3.6.1 (default, Oct 19 2019, 16:14:38)  [GCC 4.8.5 20150623 (Red Hat 4.8.5-36)]
+Python main interpreter initialized at 0x22ed100
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 5540320 bytes (5410 KB) for 400 cores
+*** Operational MODE: preforking+threaded ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x22ed100 pid: 1604 (default app)
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** uWSGI is running in multiple interpreter mode ***
+gracefully (RE)spawned uWSGI master process (pid: 1604)
+spawned uWSGI worker 1 (pid: 12574, cores: 100)
+spawned uWSGI worker 2 (pid: 12575, cores: 100)
+spawned uWSGI worker 3 (pid: 12576, cores: 100)
+spawned uWSGI worker 4 (pid: 12577, cores: 100)
+*** Stats server enabled on /usr/local/webserver/FSS/uwsgi/uwsgi.status fd: 15 ***
+[pid: 12577|app: 0|req: 1/1] 101.89.19.140 () {36 vars in 540 bytes} [Fri Oct 25 13:31:20 2019] GET /TP/html/public/index.php => generated 232 bytes in 2 msecs (HTTP/1.1 404) 2 headers in 72 bytes (1 switches on core 0)
+[pid: 12577|app: 0|req: 2/2] 182.254.52.17 () {36 vars in 524 bytes} [Fri Oct 25 13:36:43 2019] GET /public/index.php => generated 232 bytes in 0 msecs (HTTP/1.1 404) 2 headers in 72 bytes (1 switches on core 0)
+[pid: 12577|app: 0|req: 3/3] 117.136.46.226 () {38 vars in 528 bytes} [Fri Oct 25 14:36:14 2019] POST /login/ => generated 192 bytes in 1 msecs (HTTP/1.1 400) 2 headers in 74 bytes (1 switches on core 0)
+[pid: 12577|app: 0|req: 4/4] 139.162.111.98 () {32 vars in 404 bytes} [Fri Oct 25 14:39:45 2019] GET / => generated 232 bytes in 0 msecs (HTTP/1.1 404) 2 headers in 72 bytes (1 switches on core 0)
+[pid: 12577|app: 0|req: 5/5] 89.248.174.206 () {26 vars in 281 bytes} [Fri Oct 25 14:49:50 2019] HEAD / => generated 0 bytes in 0 msecs (HTTP/1.0 404) 2 headers in 72 bytes (0 switches on core 0)
+[pid: 12577|app: 0|req: 6/6] 173.212.238.109 () {34 vars in 465 bytes} [Fri Oct 25 14:50:39 2019] GET /provisioning/y000000000000.cfg => generated 232 bytes in 0 msecs (HTTP/1.1 404) 2 headers in 72 bytes (1 switches on core 0)
+[pid: 12577|app: 0|req: 7/7] 173.212.238.109 () {34 vars in 455 bytes} [Fri Oct 25 14:51:17 2019] GET /yealink/y000000000000.cfg => generated 232 bytes in 0 msecs (HTTP/1.1 404) 2 headers in 72 bytes (1 switches on core 0)
+[pid: 12577|app: 0|req: 8/8] 173.212.238.109 () {34 vars in 465 bytes} [Fri Oct 25 14:51:25 2019] GET /tftp/yealink/y000000000000.cfg => generated 232 bytes in 0 msecs (HTTP/1.1 404) 2 headers in 72 bytes (1 switches on core 0)
+[pid: 12577|app: 0|req: 9/9] 173.212.238.109 () {34 vars in 449 bytes} [Fri Oct 25 14:51:38 2019] GET /tftp/y000000000000.cfg => generated 232 bytes in 0 msecs (HTTP/1.1 404) 2 headers in 72 bytes (1 switches on core 0)
+[pid: 12577|app: 0|req: 10/10] 173.212.238.109 () {34 vars in 465 bytes} [Fri Oct 25 14:51:43 2019] GET /prov/yealink/y000000000000.cfg => generated 232 bytes in 0 msecs (HTTP/1.1 404) 2 headers in 72 bytes (1 switches on core 0)
+[pid: 12577|app: 0|req: 11/11] 173.212.238.109 () {34 vars in 449 bytes} [Fri Oct 25 14:51:47 2019] GET /prov/y000000000000.cfg => generated 232 bytes in 2 msecs (HTTP/1.1 404) 2 headers in 72 bytes (1 switches on core 0)
+[pid: 12574|app: 0|req: 1/12] 173.212.238.109 () {34 vars in 439 bytes} [Fri Oct 25 14:51:47 2019] GET /y000000000000.cfg => generated 232 bytes in 2 msecs (HTTP/1.1 404) 2 headers in 72 bytes (1 switches on core 0)
+[pid: 12577|app: 0|req: 12/13] 173.212.238.109 () {34 vars in 481 bytes} [Fri Oct 25 14:51:53 2019] GET /provisioning/yealink/y000000000000.cfg => generated 232 bytes in 0 msecs (HTTP/1.1 404) 2 headers in 72 bytes (1 switches on core 11)
+[pid: 12577|app: 0|req: 13/14] 117.136.46.226 () {38 vars in 528 bytes} [Fri Oct 25 14:54:30 2019] POST /login/ => generated 192 bytes in 0 msecs (HTTP/1.1 400) 2 headers in 74 bytes (1 switches on core 11)
+[pid: 12577|app: 0|req: 14/15] 117.136.46.226 () {38 vars in 528 bytes} [Fri Oct 25 14:55:57 2019] POST /login/ => generated 192 bytes in 1 msecs (HTTP/1.1 400) 2 headers in 74 bytes (1 switches on core 11)
+[pid: 12577|app: 0|req: 15/16] 117.136.46.226 () {38 vars in 528 bytes} [Fri Oct 25 15:01:33 2019] POST /login/ => generated 192 bytes in 1 msecs (HTTP/1.1 400) 2 headers in 74 bytes (1 switches on core 11)
+未登录
+[pid: 12577|app: 0|req: 16/17] 117.136.46.226 () {38 vars in 540 bytes} [Fri Oct 25 15:16:59 2019] POST /get_schedule/ => generated 7570 bytes in 866 msecs (HTTP/1.1 200) 2 headers in 73 bytes (1 switches on core 11)
+未登录
+[pid: 12577|app: 0|req: 17/18] 117.136.46.226 () {38 vars in 526 bytes} [Fri Oct 25 15:17:12 2019] POST /login/ => generated 85 bytes in 1096 msecs (HTTP/1.1 200) 2 headers in 71 bytes (1 switches on core 16)
+未登录
+[pid: 12577|app: 0|req: 18/19] 117.136.46.226 () {38 vars in 540 bytes} [Fri Oct 25 15:17:14 2019] POST /get_schedule/ => generated 7570 bytes in 978 msecs (HTTP/1.1 200) 2 headers in 73 bytes (1 switches on core 17)
+182210711232
+未登录
+[pid: 12577|app: 0|req: 19/20] 117.136.46.226 () {38 vars in 526 bytes} [Fri Oct 25 15:22:06 2019] POST /login/ => generated 85 bytes in 2405 msecs (HTTP/1.1 200) 2 headers in 71 bytes (1 switches on core 18)
+未登录
+[pid: 12577|app: 0|req: 20/21] 117.136.46.226 () {38 vars in 540 bytes} [Fri Oct 25 15:22:09 2019] POST /get_schedule/ => generated 7570 bytes in 715 msecs (HTTP/1.1 200) 2 headers in 73 bytes (1 switches on core 19)
+未登录
+[pid: 12577|app: 0|req: 21/22] 117.136.46.226 () {38 vars in 526 bytes} [Fri Oct 25 15:22:11 2019] POST /login/ => generated 85 bytes in 986 msecs (HTTP/1.1 200) 2 headers in 71 bytes (1 switches on core 20)
+182210711232
+已登录
+[pid: 12577|app: 0|req: 22/23] 117.136.46.226 () {38 vars in 540 bytes} [Fri Oct 25 15:22:12 2019] POST /get_schedule/ => generated 7570 bytes in 1028 msecs (HTTP/1.1 200) 2 headers in 73 bytes (1 switches on core 21)
+182210711232
+已登录
+[pid: 12577|app: 0|req: 23/24] 117.136.46.226 () {38 vars in 540 bytes} [Fri Oct 25 15:22:32 2019] POST /get_schedule/ => generated 7570 bytes in 1063 msecs (HTTP/1.1 200) 2 headers in 73 bytes (1 switches on core 22)
+[pid: 12577|app: 0|req: 24/25] 117.136.46.226 () {38 vars in 526 bytes} [Fri Oct 25 15:24:47 2019] POST /login/ => generated 192 bytes in 0 msecs (HTTP/1.1 400) 2 headers in 74 bytes (1 switches on core 23)
+[pid: 12577|app: 0|req: 25/26] 117.136.46.226 () {38 vars in 526 bytes} [Fri Oct 25 15:25:20 2019] POST /login/ => generated 192 bytes in 0 msecs (HTTP/1.1 400) 2 headers in 74 bytes (1 switches on core 23)
+[pid: 12577|app: 0|req: 26/27] 117.136.46.226 () {38 vars in 526 bytes} [Fri Oct 25 15:28:14 2019] POST /login/ => generated 192 bytes in 0 msecs (HTTP/1.1 400) 2 headers in 74 bytes (1 switches on core 23)
+Fri Oct 25 15:33:57 2019 - *** /usr/local/webserver/FSS/ has been touched... grace them all !!! ***
+...gracefully killing workers...
+Gracefully killing worker 1 (pid: 12574)...
+Gracefully killing worker 2 (pid: 12575)...
+Gracefully killing worker 3 (pid: 12576)...
+Gracefully killing worker 4 (pid: 12577)...
+worker 1 buried after 1 seconds
+worker 2 buried after 1 seconds
+worker 3 buried after 1 seconds
+worker 4 buried after 1 seconds
+binary reloading uWSGI...
+chdir() to /usr/local/webserver/FSS
+closing all non-uwsgi socket fds > 2 (max_fd = 100001)...
+found fd 3 mapped to socket 0 (127.0.0.1:8081)
+running /usr/local/python3/bin/uwsgi
+[uWSGI] getting INI configuration from uwsgi.ini
+*** Starting uWSGI 2.0.18 (64bit) on [Fri Oct 25 15:33:58 2019] ***
+compiled with version: 4.8.5 20150623 (Red Hat 4.8.5-39) on 21 October 2019 12:48:53
+os: Linux-3.10.0-957.21.3.el7.x86_64 #1 SMP Tue Jun 18 16:35:19 UTC 2019
+nodename: VM_0_6_centos
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 1
+current working directory: /usr/local/webserver/FSS
+detected binary path: /usr/local/python3/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /usr/local/webserver/FSS/
+your processes number limit is 7269
+your memory page size is 4096 bytes
+detected max file descriptor number: 100001
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 inherited INET address 127.0.0.1:8081 fd 3
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+Python version: 3.6.1 (default, Oct 19 2019, 16:14:38)  [GCC 4.8.5 20150623 (Red Hat 4.8.5-36)]
+Python main interpreter initialized at 0x1447100
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 5540320 bytes (5410 KB) for 400 cores
+*** Operational MODE: preforking+threaded ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x1447100 pid: 1604 (default app)
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** uWSGI is running in multiple interpreter mode ***
+gracefully (RE)spawned uWSGI master process (pid: 1604)
+spawned uWSGI worker 1 (pid: 5677, cores: 100)
+spawned uWSGI worker 2 (pid: 5678, cores: 100)
+spawned uWSGI worker 3 (pid: 5679, cores: 100)
+spawned uWSGI worker 4 (pid: 5680, cores: 100)
+*** Stats server enabled on /usr/local/webserver/FSS/uwsgi/uwsgi.status fd: 15 ***
+Fri Oct 25 15:34:23 2019 - *** /usr/local/webserver/FSS/ has been touched... grace them all !!! ***
+...gracefully killing workers...
+Gracefully killing worker 1 (pid: 5677)...
+Gracefully killing worker 2 (pid: 5678)...
+Gracefully killing worker 3 (pid: 5679)...
+Gracefully killing worker 4 (pid: 5680)...
+worker 1 buried after 1 seconds
+worker 2 buried after 1 seconds
+worker 3 buried after 1 seconds
+worker 4 buried after 1 seconds
+binary reloading uWSGI...
+chdir() to /usr/local/webserver/FSS
+closing all non-uwsgi socket fds > 2 (max_fd = 100001)...
+found fd 3 mapped to socket 0 (127.0.0.1:8081)
+running /usr/local/python3/bin/uwsgi
+[uWSGI] getting INI configuration from uwsgi.ini
+*** Starting uWSGI 2.0.18 (64bit) on [Fri Oct 25 15:34:24 2019] ***
+compiled with version: 4.8.5 20150623 (Red Hat 4.8.5-39) on 21 October 2019 12:48:53
+os: Linux-3.10.0-957.21.3.el7.x86_64 #1 SMP Tue Jun 18 16:35:19 UTC 2019
+nodename: VM_0_6_centos
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 1
+current working directory: /usr/local/webserver/FSS
+detected binary path: /usr/local/python3/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /usr/local/webserver/FSS/
+your processes number limit is 7269
+your memory page size is 4096 bytes
+detected max file descriptor number: 100001
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 inherited INET address 127.0.0.1:8081 fd 3
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+Python version: 3.6.1 (default, Oct 19 2019, 16:14:38)  [GCC 4.8.5 20150623 (Red Hat 4.8.5-36)]
+Python main interpreter initialized at 0x203a100
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 5540320 bytes (5410 KB) for 400 cores
+*** Operational MODE: preforking+threaded ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x203a100 pid: 1604 (default app)
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** uWSGI is running in multiple interpreter mode ***
+gracefully (RE)spawned uWSGI master process (pid: 1604)
+spawned uWSGI worker 1 (pid: 6153, cores: 100)
+spawned uWSGI worker 2 (pid: 6154, cores: 100)
+spawned uWSGI worker 3 (pid: 6155, cores: 100)
+spawned uWSGI worker 4 (pid: 6156, cores: 100)
+*** Stats server enabled on /usr/local/webserver/FSS/uwsgi/uwsgi.status fd: 15 ***
