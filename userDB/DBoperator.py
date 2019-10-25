@@ -84,11 +84,18 @@ class FocusUserDB():
         sql = 'select subjects,time from user_message where study_number=' + user_id
         self.cur.execute(sql)
         results = self.cur.fetchall()
-        return True, \
+        if results[0][0] is None and results[0][0] is None:
+            return False, \
                {
                    "subjects": results[0][0],
                    "time": results[0][1]
                }
+        else:
+            return True, \
+                   {
+                       "subjects": results[0][0],
+                       "time": results[0][1]
+                   }
 
     # 修改课程时间相关
     def update_class(self, user_id, class_name, class_time):
