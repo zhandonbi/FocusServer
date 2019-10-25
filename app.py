@@ -50,7 +50,6 @@ def search_user():
 @app.route('/sign_in/', methods=['POST'])
 def sign_in():
     name = request.form['name']
-    name = name[0:name.rfind('(', 1)]
     message = {
         'study_number': request.form['study_number'],
         'nickname': request.form['nickname'],
