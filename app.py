@@ -49,10 +49,12 @@ def search_user():
 # 新用户注册
 @app.route('/sign_in/', methods=['POST'])
 def sign_in():
+    name = request.form['name']
+    name = name[0:name.rfind('(', 1)]
     message = {
         'study_number': request.form['study_number'],
         'nickname': request.form['nickname'],
-        'name': request.form['name'],
+        'name': name,
         'sex': request.form['sex'],
         'major': request.form['major']
     }
