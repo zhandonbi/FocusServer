@@ -35,9 +35,9 @@ def schedule():
     }
 
 # 获取已注册用户信息
-@app.route('/get_user_message', methods=['POST'])
+@app.route('/get_user_message/', methods=['POST'])
 def search_user():
-    user_id = request.form['studynumber']
+    user_id = request.form['study_number']
     db_operator = FUD()
     status, message = db_operator.search_user(user_id)
     db_operator.close()
@@ -50,7 +50,7 @@ def search_user():
 @app.route('/sign_in/', methods=['POST'])
 def sign_in():
     message = {
-        'studynumber': request.form['studynumber'],
+        'study_number': request.form['study_number'],
         'nickname': request.form['nickname'],
         'name': request.form['name'],
         'sex': request.form['sex'],
@@ -68,7 +68,7 @@ def sign_in():
 @app.route('/edit_user_message/', methods=['POST'])
 def edit_user_message():
     messages = {
-        'studynumber': request.form['studynumber'],
+        'study_number': request.form['study_number'],
         'nickname': request.form['nickname'],
         'name': request.form['name'],
         'sex': request.form['sex'],
