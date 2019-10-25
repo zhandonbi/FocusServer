@@ -42,7 +42,7 @@ class FocusUserDB():
             return False, "添加失败，用户已存在"
         self.cur.execute(sql)
         self.DB_operator.commit()
-        return True, "SUCCESS"
+        return True, "添加成功"
 
     # 搜索指定ID信息
     def search_user(self, user_id):
