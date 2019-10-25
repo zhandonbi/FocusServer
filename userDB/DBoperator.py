@@ -17,7 +17,7 @@ class FocusUserDB():
 
     # 读取数据库连接信息
     def load_db_link(self):
-        with open('./Focus_DB.json') as file_obj:
+        with open('./userDB/Focus_DB.json') as file_obj:
             group = json.load(file_obj)
         self.DB_hosts = group['hosts']
         self.DB_port = group['port']
