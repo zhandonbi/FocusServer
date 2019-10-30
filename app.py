@@ -1,7 +1,8 @@
 # coding=UTF-8
 from flask import Flask, request, render_template
 from UserLogin.UserOperator import StudentMessageCenter as SMC
-from userDB.DBoperator import FocusUserDB as FUD
+from userDB.DB_user import FocusUserDB as FUD
+from userDB.DB_class import FocusClassDB as FCD
 
 app = Flask(__name__)
 app.config['JSON_AS_ASCII'] = False
@@ -15,6 +16,8 @@ def login():
     username = request.form['username']
     password = request.form['password']
     JL = SMC(username, password)
+    db = FUD()
+
     login_or_success, login_message = JL.login_vpn()
     return {
         'login_status': login_or_success,
@@ -89,10 +92,23 @@ def edit_user_message():
     }
 
 
+# 增加新的课表用户
+@app.route('/creat_new_user_class/', methods=['POST'])
+def creat_new_user_class():
+    db_operator = FCD()
+    status, message = db_operator.add_user(request.form['study_number'])
+    db_operator.close()
+    return {
+        'status': status,
+        'message': message
+    }
+
+
 @app.route('/get_class_status/', methods=['POST'])
 def get_class_status():
-    db_operator = FUD()
+    db_operator = FCD()
     status, messages = db_operator.read_class(request.form['study_number'])
+    db_operator.close()
     return {
         'status': status,
         'subjects': messages['subjects'],
@@ -106,8 +122,10 @@ def edit_class_status():
     subjects = request.form['subjects']
     time = request.form['time']
     db_operator = FUD()
-    status = db_operator.update_class(study_number, subjects, time)
-    return {'status': status}
+    status, message = db_operator.update_class(study_number, subjects, time)
+    db_operator.close()
+    return {'status': status,
+            'message': message}
 
 
 if __name__ == '__main__':
