@@ -81,5 +81,13 @@ class FocusClassDB():
                 raise Exception("写入课程相关信息异常：{}".format(e))
             return True, '修改成功'
         else:
-            return False, '修改失败'+message['subjects']
+            if not status and message['subjects'] == 'Null_user':
+                creat_status, creat_message = self.add_user(user_id)
+                try:
+                    self.cur.execute(sql)
+                    self.DB_operator.commit()
+                except Exception as e:
+                    raise Exception("写入课程相关信息异常：{}".format(e))
+                return True, '修改成功{添加了新词条}'
+
 
