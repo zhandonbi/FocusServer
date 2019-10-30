@@ -103,7 +103,7 @@ def creat_new_user_class():
         'message': message
     }
 
-
+# 查找指定用户课程计时
 @app.route('/get_class_status/', methods=['POST'])
 def get_class_status():
     db_operator = FCD()
@@ -115,13 +115,13 @@ def get_class_status():
         'time': messages['time']
     }
 
-
+# 编辑
 @app.route('/edit_class_status/', methods=['POST'])
 def edit_class_status():
     study_number = request.form['study_number']
     subjects = request.form['subjects']
     time = request.form['time']
-    db_operator = FUD()
+    db_operator = FCD()
     status, message = db_operator.update_class(study_number, subjects, time)
     db_operator.close()
     return {'status': status,
