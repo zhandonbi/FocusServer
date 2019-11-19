@@ -79,3 +79,11 @@ class FocusUserDB():
             return False, search_messages
         return True, "修改成功"
 
+    # 读取信息
+    def read_message(self, user_id):
+        sql = 'select ' + 'message' + ' from user_message where study_number=' + user_id
+        self.cur.execute(sql)
+        results = self.cur.fetchall()
+        if len(results) == 0:
+            return False, '此ID不存在'
+        return True, results[0][0]
