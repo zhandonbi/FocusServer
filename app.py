@@ -127,6 +127,16 @@ def edit_class_status():
     return {'status': status,
             'message': message}
 
+#读取论坛信息
+@app.route('/talk_message/', methods=['POST'])
+def talk_message():
+    ID = request.form['study_number']
+    fud = FUD()
+    status, message = fud.read_message(ID)
+    return {
+        'status': status,
+        'message': message
+    }
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=8081)
