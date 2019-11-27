@@ -87,3 +87,13 @@ class FocusUserDB():
         if len(results) == 0:
             return False, '此ID不存在'
         return True, results[0][0]
+
+    # 设置信息
+    def set_message(self, user_id, new_message):
+        sql = 'update user_message set message ="' + new_message + '" where study_number =' + user_id
+        try:
+            self.cur.execute(sql)
+            self.DB_operator.commit()
+        except Exception as e:
+            raise Exception("修改用户数据异常：{}".format(e))
+        return True
