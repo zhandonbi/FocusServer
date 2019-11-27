@@ -138,5 +138,14 @@ def talk_message():
         'message': message
     }
 
+#设置论坛信息
+@app.route('/set_message', methods = ['POST'])
+def set_message():
+    ID = request.form['study_number']
+    new_message = request.form['new_message']
+    fud = FUD()
+    status = fud.set_message(ID,new_message)
+    return status
+
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=8081)
