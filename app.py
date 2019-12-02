@@ -1,4 +1,3 @@
-# coding=UTF-8
 from flask import Flask, request, render_template
 from UserLogin.UserOperator import StudentMessageCenter as SMC
 from userDB.DB_user import FocusUserDB as FUD
@@ -103,6 +102,7 @@ def creat_new_user_class():
         'message': message
     }
 
+
 # 查找指定用户课程计时
 @app.route('/get_class_status/', methods=['POST'])
 def get_class_status():
@@ -114,6 +114,7 @@ def get_class_status():
         'subjects': messages['subjects'],
         'time': messages['time']
     }
+
 
 # 编辑
 @app.route('/edit_class_status/', methods=['POST'])
@@ -127,25 +128,18 @@ def edit_class_status():
     return {'status': status,
             'message': message}
 
-#读取论坛信息
+
+# 读取论坛信息
 @app.route('/talk_message/', methods=['POST'])
 def talk_message():
-    ID = request.form['study_number']
-    fud = FUD()
-    status, message = fud.read_message(ID)
-    return {
-        'status': status,
-        'message': message
-    }
+    pass
 
-#设置论坛信息
-@app.route('/set_message/', methods = ['POST'])
+
+# 设置论坛信息
+@app.route('/set_message/', methods=['POST'])
 def set_message():
-    ID = request.form['study_number']
-    new_message = request.form['new_message']
-    fud = FUD()
-    status = fud.set_message(ID,new_message)
-    return status
+    pass
+
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=8081)
