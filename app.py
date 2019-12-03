@@ -135,10 +135,11 @@ def edit_class_status():
 @app.route('/talk_list/', methods=['POST'])
 def talk_list():
     post_NUM = request.form['post_NUM']
-    TH = TalkHome
-    list = TH.get_talk_list(post_NUM)
+    print(post_NUM)
+    TH = TalkHome()
+    list = TH.get_talk_list(int(post_NUM))
     dir = {}
-    for i in range(0, 10):
+    for i in range(0, len(list)):
         dir[str(i)] = list[i]
     TH.close()
     return dir
@@ -148,7 +149,7 @@ def talk_list():
 @app.route('/open_talk/', methods=['POST'])
 def open_talk():
     talk_name = request.form['talk_name']
-    TH = TalkHome
+    TH = TalkHome()
     dir = talk = TH.read_talk(talk_name)
     TH.close()
     return dir
@@ -161,7 +162,7 @@ def creat_talk():
     que_user = request.form['que_user']
     que_text = request.form['que_text']
     que_time = request.form['que_time']
-    TH = TalkHome
+    TH = TalkHome()
     status, message = TH.creat_talk(talk_name, que_user, que_text, que_time)
     TH.close()
     return {
@@ -177,15 +178,13 @@ def update_talk():
     ans_user = request.form['ans_user']
     ans_time = request.form['ans_time']
     ans_text = request.form['ans_text']
-    TH = TalkHome
+    TH = TalkHome()
     status, message = TH.update_talk(talk_name, ans_user, ans_time, ans_text)
     TH.close
-    return{
-        'status':status,
-        'message':message
+    return {
+        'status': status,
+        'message': message
     }
-
-
 
 
 if __name__ == '__main__':
