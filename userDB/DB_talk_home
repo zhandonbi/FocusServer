@@ -1,9 +1,9 @@
 from userDB.load_db import Load
 
 
-class TalkHome():
+class TalkHome:
     def __init__(self):
-        self.DB_load = Load('talk_home_DB.json')
+        self.DB_load = Load('./userDB/talk_home_DB.json')
         self.DB_operator = self.DB_load.get_DB_operator()
         self.DB_cur = self.DB_load.get_DB_cur()
 
@@ -21,6 +21,7 @@ class TalkHome():
         else:
             return False
 
+    #  获取话题列表
     def get_talk_list(self, post_NUM):
         talk_list = []
         for i in range(1, 11):
@@ -37,6 +38,23 @@ class TalkHome():
                 }
                 talk_list.append(temp_dir)
         return talk_list
+
+    # 读取某一个话题
+    def read_talk(self, talk_name):
+        or_exits = self.search_talk(talk_name)
+        dir = {}
+        if not or_exits:
+            sql = 'SELECT * FROM ' + talk_name
+            self.DB_cur.execute(sql)
+            res = self.DB_cur.fetchall()
+            for i in range(0, len(res)):
+                base_dir = {
+                    'ans_usr': res[i][1],
+                    'ans_time': res[i][2],
+                    'ans_text': res[i][3]
+                }
+                dir[str(i)] = base_dir
+        return dir
 
     # 创建话题
     def creat_talk(self, talk_name, que_user, que_text, que_time):
@@ -95,5 +113,6 @@ class TalkHome():
         sql = 'DROP TABLE ' + talk_name
         self.DB_cur.execute(sql)
         self.DB_operator.commit()
+
 
 
