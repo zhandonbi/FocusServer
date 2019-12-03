@@ -1,7 +1,7 @@
 from userDB.load_db import Load
 
 
-class TalkHome:
+class TalkHome():
     def __init__(self):
         self.DB_load = Load('talk_home_DB.json')
         self.DB_operator = self.DB_load.get_DB_operator()
@@ -97,5 +97,3 @@ class TalkHome:
         self.DB_operator.commit()
 
 
-test = TalkHome()
-print(test.update_talk('test', 'test_user', '2019/12/2-22:18', '单身多快乐呀'))

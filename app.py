@@ -2,6 +2,7 @@ from flask import Flask, request, render_template
 from UserLogin.UserOperator import StudentMessageCenter as SMC
 from userDB.DB_user import FocusUserDB as FUD
 from userDB.DB_class import FocusClassDB as FCD
+from userDB.DB_talk_home import TalkHome
 
 app = Flask(__name__)
 app.config['JSON_AS_ASCII'] = False
@@ -129,11 +130,10 @@ def edit_class_status():
             'message': message}
 
 
-# 读取论坛信息
-@app.route('/talk_message/', methods=['POST'])
+# 读取论坛信息列表
+@app.route('/talk_list/', methods=['POST'])
 def talk_message():
-    pass
-
+    TH = DKH.
 
 # 设置论坛信息
 @app.route('/set_message/', methods=['POST'])
