@@ -1,33 +1,14 @@
-import pymysql
-import json
+from userDB.load_db import Load
 
 
 class FocusClassDB():
     def __init__(self):
-        self.DB_hosts = ''
-        self.DB_port = ''
-        self.DB_user = ''
-        self.DB_password = ''
-        self.DB = ''
-        self.load_db_link()
-        self.DB_operator = pymysql.connect(host=self.DB_hosts, port=self.DB_port, user=self.DB_user,
-                                           passwd=self.DB_password,
-                                           db=self.DB)
-        self.cur = self.DB_operator.cursor()
+        self.DB_Load = Load('./userDB/Focus_DB.json')
+        self.DB_operator = self.DB_Load.get_DB_operator()
+        self.cur = self.DB_Load.get_DB_cur()
 
-    # 读取数据库连接信息
-    def load_db_link(self):
-        with open('./userDB/Focus_DB.json') as file_obj:
-            group = json.load(file_obj)
-        self.DB_hosts = group['hosts']
-        self.DB_port = group['port']
-        self.DB_user = group['user']
-        self.DB_password = group['password']
-        self.DB = group['db']
-
-    # 关闭连接
     def close(self):
-        self.DB_operator.close()
+        self.DB_Load.close()
 
     # 添加用户
     def add_user(self, user_id):

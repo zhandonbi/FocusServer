@@ -11507,3 +11507,136 @@ spawned uWSGI worker 2 (pid: 31382, cores: 100)
 spawned uWSGI worker 3 (pid: 31383, cores: 100)
 spawned uWSGI worker 4 (pid: 31384, cores: 100)
 *** Stats server enabled on /usr/local/webserver/FSS/uwsgi/uwsgi.status fd: 15 ***
+Tue Dec  3 11:23:51 2019 - *** /usr/local/webserver/FSS/ has been touched... grace them all !!! ***
+...gracefully killing workers...
+Gracefully killing worker 1 (pid: 31282)...
+Gracefully killing worker 2 (pid: 31382)...
+Gracefully killing worker 3 (pid: 31383)...
+Gracefully killing worker 4 (pid: 31384)...
+worker 1 buried after 1 seconds
+worker 2 buried after 1 seconds
+worker 3 buried after 1 seconds
+worker 4 buried after 1 seconds
+binary reloading uWSGI...
+chdir() to /usr/local/webserver/FSS
+closing all non-uwsgi socket fds > 2 (max_fd = 100001)...
+found fd 3 mapped to socket 0 (127.0.0.1:8081)
+running /usr/local/python3/bin/uwsgi
+[uWSGI] getting INI configuration from uwsgi.ini
+*** Starting uWSGI 2.0.18 (64bit) on [Tue Dec  3 11:23:52 2019] ***
+compiled with version: 4.8.5 20150623 (Red Hat 4.8.5-39) on 21 October 2019 12:48:53
+os: Linux-3.10.0-957.21.3.el7.x86_64 #1 SMP Tue Jun 18 16:35:19 UTC 2019
+nodename: VM_0_6_centos
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 1
+current working directory: /usr/local/webserver/FSS
+detected binary path: /usr/local/python3/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /usr/local/webserver/FSS/
+your processes number limit is 7269
+your memory page size is 4096 bytes
+detected max file descriptor number: 100001
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 inherited INET address 127.0.0.1:8081 fd 3
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+Python version: 3.6.1 (default, Oct 19 2019, 16:14:38)  [GCC 4.8.5 20150623 (Red Hat 4.8.5-36)]
+Python main interpreter initialized at 0x24df100
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 5540320 bytes (5410 KB) for 400 cores
+*** Operational MODE: preforking+threaded ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x24df100 pid: 3817 (default app)
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** uWSGI is running in multiple interpreter mode ***
+gracefully (RE)spawned uWSGI master process (pid: 3817)
+spawned uWSGI worker 1 (pid: 388, cores: 100)
+spawned uWSGI worker 2 (pid: 389, cores: 100)
+spawned uWSGI worker 3 (pid: 390, cores: 100)
+spawned uWSGI worker 4 (pid: 391, cores: 100)
+*** Stats server enabled on /usr/local/webserver/FSS/uwsgi/uwsgi.status fd: 15 ***
+...gracefully killing workers...
+Gracefully killing worker 1 (pid: 388)...
+Gracefully killing worker 2 (pid: 389)...
+Gracefully killing worker 3 (pid: 390)...
+Gracefully killing worker 4 (pid: 391)...
+worker 1 buried after 1 seconds
+worker 2 buried after 1 seconds
+worker 3 buried after 1 seconds
+worker 4 buried after 1 seconds
+binary reloading uWSGI...
+chdir() to /usr/local/webserver/FSS
+closing all non-uwsgi socket fds > 2 (max_fd = 100001)...
+found fd 3 mapped to socket 0 (127.0.0.1:8081)
+running /usr/local/python3/bin/uwsgi
+[uWSGI] getting INI configuration from uwsgi.ini
+*** Starting uWSGI 2.0.18 (64bit) on [Tue Dec  3 11:24:20 2019] ***
+compiled with version: 4.8.5 20150623 (Red Hat 4.8.5-39) on 21 October 2019 12:48:53
+os: Linux-3.10.0-957.21.3.el7.x86_64 #1 SMP Tue Jun 18 16:35:19 UTC 2019
+nodename: VM_0_6_centos
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 1
+current working directory: /usr/local/webserver/FSS
+detected binary path: /usr/local/python3/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /usr/local/webserver/FSS/
+your processes number limit is 7269
+your memory page size is 4096 bytes
+detected max file descriptor number: 100001
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 inherited INET address 127.0.0.1:8081 fd 3
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+Python version: 3.6.1 (default, Oct 19 2019, 16:14:38)  [GCC 4.8.5 20150623 (Red Hat 4.8.5-36)]
+Python main interpreter initialized at 0x19a7100
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 5540320 bytes (5410 KB) for 400 cores
+*** Operational MODE: preforking+threaded ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x19a7100 pid: 3817 (default app)
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** uWSGI is running in multiple interpreter mode ***
+gracefully (RE)spawned uWSGI master process (pid: 3817)
+spawned uWSGI worker 1 (pid: 867, cores: 100)
+spawned uWSGI worker 2 (pid: 868, cores: 100)
+spawned uWSGI worker 3 (pid: 869, cores: 100)
+spawned uWSGI worker 4 (pid: 870, cores: 100)
+*** Stats server enabled on /usr/local/webserver/FSS/uwsgi/uwsgi.status fd: 15 ***
+[pid: 867|app: 0|req: 1/1] 59.36.132.240 () {36 vars in 540 bytes} [Tue Dec  3 12:06:22 2019] GET /TP/html/public/index.php => generated 232 bytes in 2 msecs (HTTP/1.1 404) 2 headers in 72 bytes (1 switches on core 54)
+[pid: 867|app: 0|req: 2/2] 208.81.173.124 () {32 vars in 466 bytes} [Tue Dec  3 12:25:04 2019] GET / => generated 232 bytes in 0 msecs (HTTP/1.1 404) 2 headers in 72 bytes (1 switches on core 54)
+[pid: 867|app: 0|req: 3/3] 46.198.143.140 () {32 vars in 465 bytes} [Tue Dec  3 13:50:53 2019] GET / => generated 232 bytes in 0 msecs (HTTP/1.1 404) 2 headers in 72 bytes (1 switches on core 54)
+[2019-12-03 14:29:11,207] ERROR in app: Exception on /talk_list/ [POST]
+Traceback (most recent call last):
+  File "/usr/local/python3/lib/python3.6/site-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/python3/lib/python3.6/site-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/python3/lib/python3.6/site-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/python3/lib/python3.6/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/local/python3/lib/python3.6/site-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/python3/lib/python3.6/site-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/usr/local/webserver/FSS/app.py", line 139, in talk_list
+    list = TH.get_talk_list(post_NUM)
+TypeError: get_talk_list() missing 1 required positional argument: 'post_NUM'
+[pid: 867|app: 0|req: 4/4] 153.101.250.177 () {50 vars in 1058 bytes} [Tue Dec  3 14:29:11 2019] POST /talk_list/ => generated 290 bytes in 3 msecs (HTTP/1.1 500) 2 headers in 84 bytes (1 switches on core 54)
+[pid: 870|app: 0|req: 1/5] 153.101.250.177 () {40 vars in 715 bytes} [Tue Dec  3 14:29:11 2019] GET /favicon.ico => generated 232 bytes in 2 msecs (HTTP/1.1 404) 2 headers in 72 bytes (1 switches on core 0)

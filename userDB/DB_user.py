@@ -1,33 +1,15 @@
-import pymysql
-import json
+from userDB.load_db import Load
 
 
 class FocusUserDB():
     def __init__(self):
-        self.DB_hosts = ''
-        self.DB_port = ''
-        self.DB_user = ''
-        self.DB_password = ''
-        self.DB = ''
-        self.load_db_link()
-        self.DB_operator = pymysql.connect(host=self.DB_hosts, port=self.DB_port, user=self.DB_user,
-                                           passwd=self.DB_password,
-                                           db=self.DB)
-        self.cur = self.DB_operator.cursor()
-
-    # 读取数据库连接信息
-    def load_db_link(self):
-        with open('./userDB/Focus_DB.json') as file_obj:
-            group = json.load(file_obj)
-        self.DB_hosts = group['hosts']
-        self.DB_port = group['port']
-        self.DB_user = group['user']
-        self.DB_password = group['password']
-        self.DB = group['db']
+        self.DB_Load = Load('./userDB/Focus_DB.json')
+        self.DB_operator = self.DB_Load.get_DB_operator()
+        self.cur = self.DB_Load.get_DB_cur()
 
     # 关闭连接
     def close(self):
-        self.DB_operator.close()
+        self.DB_Load.close()
 
     # 添加用户
     def add_user(self, user_messages):
@@ -78,22 +60,3 @@ class FocusUserDB():
         else:
             return False, search_messages
         return True, "修改成功"
-
-    # 读取信息
-    def read_message(self, user_id):
-        sql = 'select ' + 'message' + ' from user_message where study_number=' + user_id
-        self.cur.execute(sql)
-        results = self.cur.fetchall()
-        if len(results) == 0:
-            return False, '此ID不存在'
-        return True, results[0][0]
-
-    # 设置信息
-    def set_message(self, user_id, new_message):
-        sql = 'update user_message set message ="' + new_message + '" where study_number =' + user_id
-        try:
-            self.cur.execute(sql)
-            self.DB_operator.commit()
-        except Exception as e:
-            raise Exception("修改用户数据异常：{}".format(e))
-        return True

@@ -1,8 +1,9 @@
-# coding=UTF-8
-from flask import Flask, request, render_template
+from flask import Flask, request
+
 from UserLogin.UserOperator import StudentMessageCenter as SMC
-from userDB.DB_user import FocusUserDB as FUD
 from userDB.DB_class import FocusClassDB as FCD
+from userDB.DB_user import FocusUserDB as FUD
+from userDB.DB_talk_home import TalkHome
 
 app = Flask(__name__)
 app.config['JSON_AS_ASCII'] = False
@@ -103,6 +104,7 @@ def creat_new_user_class():
         'message': message
     }
 
+
 # 查找指定用户课程计时
 @app.route('/get_class_status/', methods=['POST'])
 def get_class_status():
@@ -114,6 +116,7 @@ def get_class_status():
         'subjects': messages['subjects'],
         'time': messages['time']
     }
+
 
 # 编辑
 @app.route('/edit_class_status/', methods=['POST'])
@@ -127,25 +130,63 @@ def edit_class_status():
     return {'status': status,
             'message': message}
 
-#读取论坛信息
-@app.route('/talk_message/', methods=['POST'])
-def talk_message():
-    ID = request.form['study_number']
-    fud = FUD()
-    status, message = fud.read_message(ID)
+
+# 读取论坛话题列表
+@app.route('/talk_list/', methods=['POST'])
+def talk_list():
+    post_NUM = request.form['post_NUM']
+    TH = TalkHome
+    list = TH.get_talk_list(post_NUM)
+    dir = {}
+    for i in range(0, 10):
+        dir[str(i)] = list[i]
+    TH.close()
+    return dir
+
+
+# 打开某一篇话题
+@app.route('/open_talk/', methods=['POST'])
+def open_talk():
+    talk_name = request.form['talk_name']
+    TH = TalkHome
+    dir = talk = TH.read_talk(talk_name)
+    TH.close()
+    return dir
+
+
+# 发布一个话题
+@app.route('/creat_talk/', methods=['POST'])
+def creat_talk():
+    talk_name = request.form['talk_name']
+    que_user = request.form['que_user']
+    que_text = request.form['que_text']
+    que_time = request.form['que_time']
+    TH = TalkHome
+    status, message = TH.creat_talk(talk_name, que_user, que_text, que_time)
+    TH.close()
     return {
         'status': status,
         'message': message
     }
 
-#设置论坛信息
-@app.route('/set_message/', methods = ['POST'])
-def set_message():
-    ID = request.form['study_number']
-    new_message = request.form['new_message']
-    fud = FUD()
-    status = fud.set_message(ID,new_message)
-    return status
+
+# 更新话题
+@app.route('/update_talk/', methods=['POST'])
+def update_talk():
+    talk_name = request.form['talk_name']
+    ans_user = request.form['ans_user']
+    ans_time = request.form['ans_time']
+    ans_text = request.form['ans_text']
+    TH = TalkHome
+    status, message = TH.update_talk(talk_name, ans_user, ans_time, ans_text)
+    TH.close
+    return{
+        'status':status,
+        'message':message
+    }
+
+
+
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=8081)
