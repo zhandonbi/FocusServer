@@ -56,6 +56,24 @@ class TalkHome:
                 dir[str(i)] = base_dir
         return dir
 
+    # 读取指定用户发布话题
+    def read_user_talk(self,user_name):
+        talk_list = []
+        sql = 'select * from que_list where que_user = '+user_name
+        self.DB_cur.execute(sql)
+        ress = self.DB_cur.fetchall()
+        if len(ress)!=0:
+            for res in ress:
+                temp_dir ={
+                    'talk_name': res[1],
+                    'que_usr': res[2],
+                    'que_text': res[3],
+                    'que_time': res[4],
+                    'ans_num': res[5]
+                }
+                talk_list.append(temp_dir)
+        return talk_list
+
     # 创建话题
     def creat_talk(self, talk_name, que_user, que_text, que_time):
         values = '"' + talk_name + '","' + que_user + '","' + que_text + '","' + que_time + '","0"'
