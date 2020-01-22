@@ -59,7 +59,7 @@ class TalkHome:
     # 读取指定用户发布话题
     def read_user_talk(self, user_name):
         talk_list = []
-        sql = 'select * from que_list where que_user = ' + user_name
+        sql = 'select * from que_list where que_user = "' + user_name+'"'
         self.DB_cur.execute(sql)
         ress = self.DB_cur.fetchall()
         if len(ress) != 0:
