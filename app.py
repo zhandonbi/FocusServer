@@ -20,10 +20,12 @@ def login():
     db = FUD()
 
     login_or_success, login_message = JL.login_vpn()
+    print('用户{'+username+'}登录,状态:'+str(login_or_success))
     return {
         'login_status': login_or_success,
         'username': JL.find_userInfo(),
         'login_message': login_message}
+
 
 # 获取课表
 @app.route('/get_schedule/', methods=['POST'])
@@ -33,11 +35,12 @@ def schedule():
     # school_year = request.form['school_year']
     JL = SMC(username, password)
     JL.login_vpn()
-    body, extra = JL.get_schedule('2019-2020-1')
+    body, extra = JL.get_schedule('2019-2020-2')
     return {
         'schedule_body': body,
         "schedule_extra": extra
     }
+
 
 # 获取已注册用户信息
 @app.route('/get_user_message/', methods=['POST'])
@@ -50,6 +53,7 @@ def search_user():
         'search_status': status,
         'search_message': message
     }
+
 
 # 新用户注册
 @app.route('/sign_in/', methods=['POST'])
@@ -70,6 +74,7 @@ def sign_in():
         'sign_in_message': add_message
     }
 
+
 # 编辑已注册用户信息
 @app.route('/edit_user_message/', methods=['POST'])
 def edit_user_message():
@@ -88,6 +93,7 @@ def edit_user_message():
         'sign_in_message': message
     }
 
+
 # 增加新的课表用户
 @app.route('/creat_new_user_class/', methods=['POST'])
 def creat_new_user_class():
@@ -98,6 +104,7 @@ def creat_new_user_class():
         'status': status,
         'message': message
     }
+
 
 # 查找指定用户课程计时
 @app.route('/get_class_status/', methods=['POST'])
@@ -111,6 +118,7 @@ def get_class_status():
         'time': messages['time']
     }
 
+
 # 编辑
 @app.route('/edit_class_status/', methods=['POST'])
 def edit_class_status():
@@ -122,6 +130,7 @@ def edit_class_status():
     db_operator.close()
     return {'status': status,
             'message': message}
+
 
 # 读取论坛话题列表
 @app.route('/talk_list/', methods=['POST'])
@@ -135,26 +144,29 @@ def talk_list():
     TH.close()
     return dir
 
+
 # 读取某用户发布的所有话题
-@app.route('/user_que/',methods=['POST'])
+@app.route('/user_que/', methods=['POST'])
 def user_que():
     TH = TalkHome()
     user_name = request.form['user_name']
     list = TH.read_user_talk(user_name)
-    dir ={}
-    for i in range(0,len(list)):
+    dir = {}
+    for i in range(0, len(list)):
         dir[str(i)] = list[i]
     TH.close()
     return dir
+
 
 # 打开某一篇话题
 @app.route('/open_talk/', methods=['POST'])
 def open_talk():
     talk_name = request.form['talk_name']
     TH = TalkHome()
-    dir = talk = TH.read_talk(talk_name)
+    dir = TH.read_talk(talk_name)
     TH.close()
     return dir
+
 
 # 发布一个话题
 @app.route('/creat_talk/', methods=['POST'])
@@ -171,6 +183,7 @@ def creat_talk():
         'message': message
     }
 
+
 # 更新话题
 @app.route('/update_talk/', methods=['POST'])
 def update_talk():
@@ -180,7 +193,7 @@ def update_talk():
     ans_text = request.form['ans_text']
     TH = TalkHome()
     status, message = TH.update_talk(talk_name, ans_user, ans_time, ans_text)
-    TH.close
+    TH.close()
     return {
         'status': status,
         'message': message

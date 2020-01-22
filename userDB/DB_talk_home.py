@@ -57,14 +57,14 @@ class TalkHome:
         return dir
 
     # 读取指定用户发布话题
-    def read_user_talk(self,user_name):
+    def read_user_talk(self, user_name):
         talk_list = []
-        sql = 'select * from que_list where que_user = '+user_name
+        sql = 'select * from que_list where que_user = ' + user_name
         self.DB_cur.execute(sql)
         ress = self.DB_cur.fetchall()
-        if len(ress)!=0:
+        if len(ress) != 0:
             for res in ress:
-                temp_dir ={
+                temp_dir = {
                     'talk_name': res[1],
                     'que_usr': res[2],
                     'que_text': res[3],
@@ -112,6 +112,8 @@ class TalkHome:
             self.DB_cur.execute(sql2)
             self.DB_operator.commit()
             return True, '更新话题成功'
+        else:
+            return False, '话题不存在'
 
     def get_a_message(self, object, talk_name):
         sql = 'select ' + object + ' from que_list where talk_name="' + talk_name + '"'
@@ -131,6 +133,3 @@ class TalkHome:
         sql = 'DROP TABLE ' + talk_name
         self.DB_cur.execute(sql)
         self.DB_operator.commit()
-
-
-
