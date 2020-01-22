@@ -19,6 +19,7 @@ def login():
     db = FUD()
 
     login_or_success, login_message = JL.login_vpn()
+    print('用户{'+username+'}登录,状态:'+str(login_or_success))
     return {
         'login_status': login_or_success,
         'username': JL.find_userInfo(),
@@ -33,7 +34,7 @@ def schedule():
     # school_year = request.form['school_year']
     JL = SMC(username, password)
     JL.login_vpn()
-    body, extra = JL.get_schedule('2019-2020-1')
+    body, extra = JL.get_schedule('2019-2020-2')
     return {
         'schedule_body': body,
         "schedule_extra": extra
@@ -134,7 +135,6 @@ def edit_class_status():
 @app.route('/talk_list/', methods=['POST'])
 def talk_list():
     post_NUM = request.form['post_NUM']
-    print(post_NUM)
     TH = TalkHome()
     list = TH.get_talk_list(int(post_NUM))
     dir = {}
@@ -144,12 +144,26 @@ def talk_list():
     return dir
 
 
+# 读取某用户发布的所有话题
+@app.route('/user_que/', methods=['POST'])
+def user_que():
+    TH = TalkHome()
+    user_name = request.form['user_name']
+    list = TH.read_user_talk(user_name)
+    dir = {}
+    for i in range(0, len(list)):
+        dir[str(i)] = list[i]
+    TH.close()
+    print("!!!"+str(dir))
+    return dir
+
+
 # 打开某一篇话题
 @app.route('/open_talk/', methods=['POST'])
 def open_talk():
     talk_name = request.form['talk_name']
     TH = TalkHome()
-    dir = talk = TH.read_talk(talk_name)
+    dir = TH.read_talk(talk_name)
     TH.close()
     return dir
 
@@ -179,7 +193,7 @@ def update_talk():
     ans_text = request.form['ans_text']
     TH = TalkHome()
     status, message = TH.update_talk(talk_name, ans_user, ans_time, ans_text)
-    TH.close
+    TH.close()
     return {
         'status': status,
         'message': message
