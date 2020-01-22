@@ -155,7 +155,7 @@ def user_que():
     for i in range(0, len(list)):
         dir[str(i)] = list[i]
     TH.close()
-    print(dir)
+    print("!!!"+str(dir))
     return dir
 
 
