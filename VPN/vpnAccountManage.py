@@ -24,7 +24,7 @@ class VpnAccountGet():
         self.session.keep_alive = False
 
     def load_account_list(self):
-        with open('./VPN/vpn_account.json') as file_read:
+        with open('./vpn_account.json') as file_read:
             self.account_list = json.load(file_read)
 
     def vpn_account_or_using(self, username, password):
