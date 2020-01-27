@@ -25,10 +25,10 @@ class TalkHome:
     def get_talk_list(self, post_NUM):
         talk_list = []
         for i in range(1, 11):
-            sql = 'select * from que_list where ID = ' + str(post_NUM * 10 + i)
+            sql = 'select * from que_list'
             self.DB_cur.execute(sql)
-            res = self.DB_cur.fetchall()
-            if len(res) != 0:
+            ress = self.DB_cur.fetchall()
+            for res in ress:
                 temp_dir = {
                     'talk_name': res[0][1],
                     'que_usr': res[0][2],
@@ -59,7 +59,7 @@ class TalkHome:
     # 读取指定用户发布话题
     def read_user_talk(self, user_name):
         talk_list = []
-        sql = 'select * from que_list where que_user = "' + user_name+'"'
+        sql = 'select * from que_list where que_user = "' + user_name + '"'
         self.DB_cur.execute(sql)
         ress = self.DB_cur.fetchall()
         if len(ress) != 0:
