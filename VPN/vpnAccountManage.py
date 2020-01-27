@@ -88,12 +88,9 @@ class VpnAccountGet():
         username = ''
         password = ''
         # 如果都处于使用状态，随机抽取一个账户强制登出
-        i = 1
-        ran = random.randint(1, len(self.account_list))
+        i = 0
+        ran = random.randint(0, len(self.account_list))
         for username, password in self.account_list.items():
             if i == ran:
-                self.force_logout(username, password)
-        print(username)
-        return username, password
-
-
+                return username, password
+            i = i + 1
