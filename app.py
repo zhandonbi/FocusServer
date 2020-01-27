@@ -34,7 +34,7 @@ def schedule():
     # school_year = request.form['school_year']
     JL = SMC(username, password)
     JL.login_vpn()
-    body, extra = JL.get_schedule('2019-2020-2')
+    body, extra = JL.get_schedule('2019-2020-1')
     return {
         'schedule_body': body,
         "schedule_extra": extra
