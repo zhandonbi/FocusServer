@@ -85,14 +85,11 @@ class VpnAccountGet():
         self.session.close()
 
     def get_can_use_account(self):
-        for username, password in self.account_list.items():
-            stats = self.vpn_account_or_using(username, password)
-            if not stats:
-                return username, password
-        number = len(self.account_list)
+        username = ''
+        password = ''
         # 如果都处于使用状态，随机抽取一个账户强制登出
         i = 1
-        ran = random.randint(1, number+1)
+        ran = random.randint(1, len(self.account_list))
         for username, password in self.account_list.items():
             if i == ran:
                 self.force_logout(username, password)
