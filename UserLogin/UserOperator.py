@@ -37,6 +37,8 @@ class StudentMessageCenter():
         url = "https://vpn.just.edu.cn/dana-na/auth/url_default/login.cgi"
         VA = VAG()
         v_username, v_password = VA.get_can_use_account()
+        print(v_username)
+        print(v_password)
         VPNdata = {
             'tz_offset': '480',
             'username': v_username,
