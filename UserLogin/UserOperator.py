@@ -90,6 +90,7 @@ class StudentMessageCenter():
             text = BS.find('div', attrs={'id': 'Top1_divLoginName'}).text
             text = text[0:text.rfind('(', 1)]
         except Exception as e:
+            time.sleep(3)
             raise Exception("获取失败")
         return text
 
@@ -101,6 +102,7 @@ class StudentMessageCenter():
                 headers=self.headers, verify=False, data={'xnxq01id': school_year})
             html = response.text
         except Exception as e:
+            time.sleep(3)
             raise Exception("获取失败")
         class_list = ''
         bs = BeautifulSoup(html, 'lxml')
