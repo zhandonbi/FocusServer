@@ -3,6 +3,7 @@ from bs4 import BeautifulSoup
 from VPN.vpnAccountManage import VpnAccountGet as VAG
 import requests
 import re
+import time
 
 headers = {
     'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36'
@@ -74,6 +75,7 @@ class StudentMessageCenter():
                               headers=headers, data={'USERNAME': self.username, 'PASSWORD': self.password},
                               verify=False)
         except Exception as e:
+            time.sleep(3)
             raise Exception("【】未知异常】:{}".format(e))
             return False, '登陆失败，请检查账号密码是否正确'
         return True, 'SUCCESS'
