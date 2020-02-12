@@ -24,19 +24,18 @@ class TalkHome:
     #  获取话题列表
     def get_talk_list(self, post_NUM):
         talk_list = []
-        for i in range(1, 11):
-            sql = 'select * from que_list'
-            self.DB_cur.execute(sql)
-            ress = self.DB_cur.fetchall()
-            for res in ress:
-                temp_dir = {
+        sql = 'select * from que_list'
+        self.DB_cur.execute(sql)
+        ress = self.DB_cur.fetchall()
+        for res in ress:
+            temp_dir = {
                     'talk_name': res[1],
                     'que_usr': res[2],
                     'que_text': res[3],
                     'que_time': res[4],
                     'ans_num': res[5]
-                }
-                talk_list.append(temp_dir)
+            }
+            talk_list.append(temp_dir)
         return talk_list
 
     # 读取某一个话题
