@@ -30,11 +30,11 @@ class TalkHome:
             ress = self.DB_cur.fetchall()
             for res in ress:
                 temp_dir = {
-                    'talk_name': res[0][1],
-                    'que_usr': res[0][2],
-                    'que_text': res[0][3],
-                    'que_time': res[0][4],
-                    'ans_num': res[0][5]
+                    'talk_name': res[1],
+                    'que_usr': res[2],
+                    'que_text': res[3],
+                    'que_time': res[4],
+                    'ans_num': res[5]
                 }
                 talk_list.append(temp_dir)
         return talk_list
