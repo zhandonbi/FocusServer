@@ -4,6 +4,8 @@ from UserLogin.UserOperator import StudentMessageCenter as SMC
 from userDB.DB_class import FocusClassDB as FCD
 from userDB.DB_user import FocusUserDB as FUD
 from userDB.DB_talk_home import TalkHome
+from Daily_Check.main import *
+
 
 app = Flask(__name__)
 app.config['JSON_AS_ASCII'] = False
@@ -199,6 +201,11 @@ def update_talk():
         'status': status,
         'message': message
     }
+
+
+@app.route('/daily_check/',methods=['GET'])
+def daily_check():
+    return run_check()
 
 
 if __name__ == '__main__':
