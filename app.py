@@ -1,4 +1,4 @@
-from flask import Flask, request,jsonify
+from flask import Flask, request, jsonify
 
 from UserLogin.UserOperator import StudentMessageCenter as SMC
 from userDB.DB_class import FocusClassDB as FCD
@@ -6,10 +6,8 @@ from userDB.DB_user import FocusUserDB as FUD
 from userDB.DB_talk_home import TalkHome
 from Daily_Check.main import *
 
-
 app = Flask(__name__)
-
-
+app.config['JSON_AS_ASCII'] = False
 
 # 用户登录
 @app.route('/login/', methods=['GET', 'POST'])
@@ -22,7 +20,7 @@ def login():
     db = FUD()
 
     login_or_success, login_message = JL.login_vpn()
-    print('用户{'+username+'}登录,状态:'+str(login_or_success))
+    print('用户{' + username + '}登录,状态:' + str(login_or_success))
     return {
         'login_status': login_or_success,
         'username': JL.find_userInfo(),
@@ -157,7 +155,6 @@ def user_que():
     for i in range(0, len(list)):
         dir[str(i)] = list[i]
     TH.close()
-    print("!!!"+str(dir))
     return dir
 
 
@@ -203,11 +200,10 @@ def update_talk():
     }
 
 
-@app.route('/daily_check/',methods=['GET'])
+@app.route('/daily_check/', methods=['GET'])
 def daily_check():
     return jsonify(run_check())
 
 
 if __name__ == '__main__':
-    app.config['JSON_AS_ASCII'] = False
     app.run(host='0.0.0.0', port=8081)
