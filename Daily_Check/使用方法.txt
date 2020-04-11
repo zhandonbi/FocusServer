@@ -1,0 +1,16 @@
+1. 把excel文件替换成自己班级的学号和姓名，按照我的格式，所有数字格式必须是文本
+
+2. python安装模块
+
+pip install request
+pip install bs4
+pip install xlrd
+如果提示有其他模块没安装，百度安装即可 有人python2/3共存可能是 pip3命令
+
+3. 运行main文件即可
+
+可以使用命令行，移动到Daily_Check文件夹下，然后输入
+
+python main.py
+
+现在给大家一个小提示，首先进入目标文件夹位置，按住【Shift】+ 【鼠标右键】，选择【在此处打开命令窗口】，即可快速在此目录下启动cmd。
