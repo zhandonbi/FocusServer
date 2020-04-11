@@ -1,4 +1,4 @@
-from flask import Flask, request
+from flask import Flask, request,jsonify
 
 from UserLogin.UserOperator import StudentMessageCenter as SMC
 from userDB.DB_class import FocusClassDB as FCD
@@ -205,7 +205,7 @@ def update_talk():
 
 @app.route('/daily_check/',methods=['GET'])
 def daily_check():
-    return run_check()
+    return jsonify(run_check())
 
 
 if __name__ == '__main__':
