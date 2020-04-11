@@ -1,4 +1,4 @@
-from flask import Flask, request
+from flask import Flask, request,jsonify
 from UserLogin.UserOperator import StudentMessageCenter as SMC
 from userDB.DB_class import FocusClassDB as FCD
 from userDB.DB_user import FocusUserDB as FUD
@@ -7,7 +7,7 @@ from Daily_Check.main import *
 
 
 app = Flask(__name__)
-app.config['JSON_AS_ASCII'] = False
+
 
 
 # 用户登录
@@ -204,8 +204,9 @@ def update_talk():
 
 @app.route('/daily_check/',methods=['GET'])
 def daily_check():
-    return run_check()
+    return jsonify(run_check())
 
 
 if __name__ == '__main__':
+    app.config['JSON_AS_ASCII'] = False
     app.run(host='0.0.0.0', port=8081)
