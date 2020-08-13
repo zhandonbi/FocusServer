@@ -73,6 +73,7 @@ def run_check():
             res_list = json.loads(response.text)
             if len(res_list["list"]) == 0:
                 temp_i += 1
+                print(i['name'])
                 res += '[{}]{}--未填写<br/>'.format(time, i['name'])
         temp_res = res
         res = '未填写人数:{}<br/>' \
