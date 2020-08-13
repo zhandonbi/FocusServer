@@ -1,5 +1,4 @@
-from flask import Flask, request, jsonify
-
+from flask import Flask, request,jsonify
 from UserLogin.UserOperator import StudentMessageCenter as SMC
 from userDB.DB_class import FocusClassDB as FCD
 from userDB.DB_user import FocusUserDB as FUD

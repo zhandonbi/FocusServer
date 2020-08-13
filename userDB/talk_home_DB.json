@@ -1,0 +1,7 @@
+{
+  "hosts":"cdb-h9x1lhj4.bj.tencentcdb.com",
+  "port": 10168,
+  "user": "root",
+  "password": "Focus0725",
+  "db": "talk_home"
+}
