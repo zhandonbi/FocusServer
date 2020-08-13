@@ -75,15 +75,8 @@ def run_check():
             response = session.post(url_survey_post, data=str(params), headers=headers2, verify=False)
             res_list = json.loads(response.text)
             if len(res_list["list"]) == 0:
-<<<<<<< HEAD
                 temp_i += 1
                 res += '[{}]{}--未填写<br/>'.format(time, i['name'])
         temp_res = res
         res = '未填写人数：' + str(temp_i) + '<br/>' + temp_res
-=======
-                temp_i+=1
-                res += '['+str(time)+']'+i['name']+'--未填写'+'<br/>'
-        temp_res = res
-        res='未填写人数：'+str(temp_i)+'<br/>'+ temp_res
->>>>>>> e92c26c433e4d0441c621110edec97e42cd56bbe
     return res
