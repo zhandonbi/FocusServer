@@ -62,7 +62,7 @@ class Login:
 
 
 def run_check():
-    res = {}
+    res = ''
     llogin = Login("182210711235", "252414")
     flag, session = llogin.login()
     if flag:
@@ -76,6 +76,7 @@ def run_check():
             res_list = json.loads(response.text)
             if len(res_list["list"]) == 0:
                 temp_i += 1
-                res[str(temp_i)] = i['name'] + 'no sign--' + str(time)
-        res['no sign'] = temp_i
+                res += '[{}]{}--未填写<br/>'.format(time, i['name'])
+        temp_res = res
+        res = '未填写人数：' + str(temp_i) + '<br/>' + temp_res
     return res
