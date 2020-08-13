@@ -51,13 +51,10 @@ class Login:
             self.__session.get(url=url_menhu, headers=headers1, verify=False)
             response = self.__session.get(url=url_menhu, headers=headers1, verify=False)
             if "统一身份认证登录" in response.text:
-                print("{}登录门户网站失败\n".format(self.__username))
                 return False, self.__session
             else:
-                print("{}登录门户网站成功\n".format(self.__username))
                 return True, self.__session
         except Exception as e:
-            print("{}登录门户网站失败\n".format(self.__username))
             return False, self.__session
 
 
@@ -66,7 +63,7 @@ def run_check():
     llogin = Login("182210711235", "252414")
     flag, session = llogin.login()
     if flag:
-        session.get(url=url_survey, headers=headers2,stream = True)
+        session.get(url=url_survey, headers=headers2, stream=True)
         data = loadExcel.loadData()
         temp_i = 0
         for i in data:
@@ -78,5 +75,9 @@ def run_check():
                 temp_i += 1
                 res += '[{}]{}--未填写<br/>'.format(time, i['name'])
         temp_res = res
-        res = '未填写人数：' + str(temp_i) + '<br/>' + temp_res
+        res = '未填写人数:{}<br/>' \
+              '{}' \
+              '------------------------------<br/>' \
+              '!!!此网络接口仅供1822107112使用!!!<br/>' \
+              'API上次更新日期[2020/08/13]'.format(temp_i, temp_res)
     return res
