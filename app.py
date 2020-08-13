@@ -202,7 +202,7 @@ def update_talk():
 
 @app.route('/daily_check/', methods=['GET'])
 def daily_check():
-    return jsonify(run_check())
+    return str(run_check())
 
 
 if __name__ == '__main__':

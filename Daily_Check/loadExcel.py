@@ -1,6 +1,6 @@
 import xlrd
 
-fileName = "Daily_Check/sheet.xlsx"
+fileName = "./Daily_Check/sheet.xlsx"
 
 def loadData():
     data = xlrd.open_workbook(fileName)
