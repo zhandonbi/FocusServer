@@ -15,10 +15,6 @@ url_menhu_old = 'http://my2.just.edu.cn/_web/fusionportal/index.jsp?_p=YXM9MSZwP
 url_survey = 'http://ehall.just.edu.cn/default/work/jkd/jkxxtb/jkxxcj.jsp'
 url_survey_post = 'http://ehall.just.edu.cn/default/work/jkd/jkxxtb/com.sudytech.portalone.base.db.queryBySqlWithoutPagecond.biz.ext'
 
-time = getTime.getTime()
-params = {"params": {"empcode": "162210702110", "tbrq": time},
-          "querySqlId": "com.sudytech.work.suda.jkxxtb.jkxxtb.queryToday"}
-
 
 class Login:
 
@@ -61,6 +57,9 @@ class Login:
 def run_check():
     res = ''
     llogin = Login("182210711235", "252414")
+    time = getTime.getTime()  # 转换为局部变量以实时刷新时间
+    params = {"params": {"empcode": "162210702110", "tbrq": time},
+              "querySqlId": "com.sudytech.work.suda.jkxxtb.jkxxtb.queryToday"}
     flag, session = llogin.login()
     if flag:
         session.get(url=url_survey, headers=headers2, stream=True)
@@ -73,7 +72,6 @@ def run_check():
             res_list = json.loads(response.text)
             if len(res_list["list"]) == 0:
                 temp_i += 1
-                print(i['name'])
                 res += '[{}]{}--未填写<br/>'.format(time, i['name'])
         temp_res = res
         res = '未填写人数:{}<br/>' \
