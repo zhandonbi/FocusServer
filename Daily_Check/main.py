@@ -58,6 +58,7 @@ def run_check():
     res = ''
     llogin = Login("182210711235", "252414")
     time = getTime.getTime()  # 转换为局部变量以实时刷新时间
+    print(time)
     params = {"params": {"empcode": "162210702110", "tbrq": time},
               "querySqlId": "com.sudytech.work.suda.jkxxtb.jkxxtb.queryToday"}
     flag, session = llogin.login()
